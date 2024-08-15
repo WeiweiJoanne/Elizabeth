@@ -627,10 +627,6 @@ video {
   margin-top: 1.25rem;
 }
 
-.block {
-  display: block;
-}
-
 .flex {
   display: flex;
 }
@@ -671,10 +667,6 @@ video {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-94 {
-  height: 22rem;
 }
 
 .w-full {
