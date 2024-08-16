@@ -1,11 +1,41 @@
 {% comment %} {{ product.metafields.custom.feature }} {% endcomment %}
 {% comment %} <img src="{{ product.metafields.custom.image | image_url: width: 1280 }}" alt=""> {% endcomment %}
 
-<div class="max-w-3xl mx-auto my-8">
+<div class="max-w-7xl mx-auto my-8">
+  <div class="flex">
+    <div class="basis-5/12 product--media">
+      {% render 'product-media' %}
+    </div>
+    <div class="basis-7/12 product--infomation">
+      <h3 class="text-3xl font-black">
+        Plustek OpticFilm 120 pro - scan 35mm Film Strips, Slide and 120/220 Film Scanner. Scan from 6x4.5 up to 6x12cm
+        in Size. Support Mac and Windows
+      </h3>
+      <p class="mt-4">
+        Multiple film format supports - 35mm slides and film strips, including Xpan size, and 120 medium formats from
+        6x4.5 to 6x12. The maximum length is 120 mm.
+        Scan at 5300 dpi optical resolution - OpticFilm 120 Pro uses an 8-element glass lens with 5,300 dpi and
+        high-sensitive color CCD, 48bit color bit depth, and provide up to 273 megapixels @6x12 film.
+        Flagship Scanner Software Included - Plustek OpticFilm 120 Pro bundles the top-professional level software
+        version: SilverFast Ai Studio (MSRP 658 USD), and include a 6x7 size IT8 Target& Calibration sheet to ensures
+        the accurate color results.
+        OS Support - Windows 7 X64, Windows 8 X64, Windows 8.1 X64, and Windows 10 X64 & Mac OS X 10.11.x ~ 10.15.x. Our
+        technical support experts are located in California, USA.
+        Made in Taiwan - OpticFilm 120 Pro is made in Taiwan and wins the Taiwan Excellence Awards in 2020. Each scanner
+        is well-adjusted and proven its high quality by Plustek’s engineering experts.
+      </p>
+      <button class="my-2 bg-red-500 px-4 py-2 text-white">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+
+
+{% comment %} <div class="max-w-7xl mx-auto my-8">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
     <div class="product--media">
       {% render 'product-media' %}
     </div>
     <div class="product--infomation"> </div>
   </div>
-</div>
+</div> {% endcomment %}

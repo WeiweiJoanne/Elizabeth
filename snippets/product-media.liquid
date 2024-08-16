@@ -1,8 +1,31 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" async></script>
 
 
-<div class="hidden md:block">
+<div class="flex">
+    <div class="basis-1/12 small-images">
+        {% for media in product.media %}
+        <div class="h-100 overflow-hidden p-1 shadow-2xl ">
+            {% case media.media_type %}
+            {% when 'image' %}
+            <img src="{{ media |  image_url: width: 1280 }}" alt="{{ media.preview_image.alt}}"
+                class="w-full h-full object-cover ">
+            {% when 'external_video' %}
+            {{ media | external_video_tag: class: "w-full h-80 object-cover" }}
+            {% when 'video' %}
+            {{ media | video_tag: controls: true, class: "w-full h-80 object-cover" }}
+            {% else %}
+
+            {% endcase %}
+        </div>
+        {% endfor %}
+    </div>
+    <div class="basis-10/12 image">
+        <img class="" src="//margaret-development-online-store.myshopify.com/cdn/shop/files/81cPM99QlgL._AC_SX679.jpg?v=1723735166&amp;width=540"
+            alt="Plustek OpticFilm 120 pro - scan 35mm Film Strips, Slide and 120/220 Film Scanner. Scan from 6x4.5 up to 6x12cm in Size. Support Mac and Windows">
+    </div>
+</div>
+{% comment %} <div class="hidden md:block">
     {% for media in product.media %}
     <div class="h-100 overflow-hidden p-2">
 
@@ -68,4 +91,4 @@
 
 
     });
-</script>
+</script> {% endcomment %}
