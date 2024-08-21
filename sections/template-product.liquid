@@ -1,328 +1,287 @@
 {% comment %} {{ product.metafields.custom.feature }} {% endcomment %}
-{% comment %} <img src="{{ product.metafields.custom.image | image_url: width: 1280 }}" alt=""> {% endcomment %}
+{% comment %} <img src="{{ product.metafields.custom['slider1_image3'] | image_url: width: 1280 }}" alt="">
+{% endcomment %}
 
 
 
+<section class="">
+  <div class="mx-auto container flex my-8 items-center flex-col gap-4 lg:flex-row lg:gap-0">
+    <div class="px-2 product--media basis-12/12 lg:basis-5/12 xl:basis-6/12 2xl:basis-5/12">
+      {% render 'product-media' %}
+    </div>
+    <div class="px-2 product--infomation basis-12/12 lg:basis-7/12 xl:basis-6/12 2xl:basis-7/12">
+      <h1 class="text-lg font-black md:text-2xl xl:text-3xl">
+        {{ product.title }}
+      </h1>
+      <p class="mt-4 text-sm xl:text-base">
+        {{ product.description }}
+      </p>
+      <button class="my-2 mt-4 bg-red-500 px-12 py-2 text-white rounded-xl text-xl">Add to Cart</button>
+    </div>
+  </div>
+</section>
 
-<div class="  ">
-
-  <section class="">
-    <div class="mx-auto container flex my-8 ">
-      <div class="basis-5/12 px-2 product--media">
-        {% render 'product-media' %}
+<section class="mt-12 mb-2">
+  <div class="mx-auto container">
+    {% assign slider_num = 1 %}
+    {% render 'slider', slider_num: slider_num %}
+  </div>
+  </div>
+</section>
+<section class="mt-12 mb-2">
+  <div class="mx-auto container">
+    <h2 class="text-2xl font-black text-center mb-2">Create Incredible Scans with the Plustek Multiple Format Film
+      Scanner</h2>
+    <iframe class="video w-full aspect-video"
+      src="https://www.youtube.com/embed/ZoKdG9GaEFY?si=ByXnJl37AEHJDAJg" title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+</section>
+<section class="mt-12 mb-2">
+  <div class="mx-auto container">
+    <h2 class="text-2xl font-black text-center mb-2">OpticFilm 120 Pro - Professional Medium Format and 35mm
+      Photographic
+      Film Scanner</h2>
+    <div class="swiper swiper1">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img class="w-full"
+            src="https://m.media-amazon.com/images/S/aplus-media/sc/b899e035-829e-4282-bf67-f56044a632d3.__CR0,0,970,600_PT0_SX970_V1___.jpg"
+            alt="">
+        </div>
+        <div class="swiper-slide">
+          <img class="w-full"
+            src="https://m.media-amazon.com/images/S/aplus-media/sc/b899e035-829e-4282-bf67-f56044a632d3.__CR0,0,970,600_PT0_SX970_V1___.jpg"
+            alt="">
+        </div>
       </div>
-      <div class="basis-7/12 px-2 product--infomation">
-        <h1 class="text-2xl font-black">
-          Plustek OpticFilm 120 pro - scan 35mm Film Strips, Slide and 120/220 Film Scanner. Scan from 6x4.5 up to
-          6x12cm
-          in Size. Support Mac and Windows
-        </h1>
-        <p class="mt-4">
-          Multiple film format supports - 35mm slides and film strips, including Xpan size, and 120 medium formats from
-          6x4.5 to 6x12. The maximum length is 120 mm.
-          Scan at 5300 dpi optical resolution - OpticFilm 120 Pro uses an 8-element glass lens with 5,300 dpi and
-          high-sensitive color CCD, 48bit color bit depth, and provide up to 273 megapixels @6x12 film.
-          Flagship Scanner Software Included - Plustek OpticFilm 120 Pro bundles the top-professional level software
-          version: SilverFast Ai Studio (MSRP 658 USD), and include a 6x7 size IT8 Target& Calibration sheet to ensures
-          the accurate color results.
-          OS Support - Windows 7 X64, Windows 8 X64, Windows 8.1 X64, and Windows 10 X64 & Mac OS X 10.11.x ~ 10.15.x.
-          Our
-          technical support experts are located in California, USA.
-          Made in Taiwan - OpticFilm 120 Pro is made in Taiwan and wins the Taiwan Excellence Awards in 2020. Each
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+</section>
+<section class="mt-12 mb-2">
+  <div class="mx-auto container">
+    <h2 class="text-2xl font-black text-center mb-2">Outstanding resolution to output extraordinary image</h2>
+    <div class="flex gap-6">
+      <di class="basic-1/3">
+        <img
+          src="https://plustek.com/content/en/film-and-photo-scanners/opticfilm-120-pro/myImages/of120pro-workflow.jpg"
+          alt="">
+
+        <h3 class="text-xl font-bold">User-friendly Workflow</h3>
+        <p>Three types of film holders (35mm film strip, 35mm slides, and 120 film strip) are recognized by the
           scanner
-          is well-adjusted and proven its high quality by Plustek’s engineering experts.
-        </p>
-        <button class="my-2 mt-4 bg-red-500 px-12 py-2 text-white rounded-xl text-xl">Add to Cart</button>
+          automatically.</p>
+      </di gap-6v>
+      <di class="basic-1/3">
+        <img
+          src="https://plustek.com/content/en/film-and-photo-scanners/opticfilm-120-pro/myImages/of120pro-workflow.jpg"
+          alt="">
+        <h3 class="text-xl font-bold">User-friendly Workflow</h3>
+        <p>Three types of film holders (35mm film strip, 35mm slides, and 120 film strip) are recognized by the
+          scanner
+          automatically.</p>
+      </di gap-6v>
+      <div class="basic-1/3">
+        <img
+          src="https://plustek.com/content/en/film-and-photo-scanners/opticfilm-120-pro/myImages/of120pro-workflow.jpg"
+          alt="">
+        <h3 class="text-xl font-bold">User-friendly Workflow</h3>
+        <p>Three types of film holders (35mm film strip, 35mm slides, and 120 film strip) are recognized by the
+          scanner
+          automatically.</p>
       </div>
-    </div>
-  </section>
 
-  <section class="mt-12 mb-2">
-    <div class="mx-auto container">
+    </div>
+  </div>
+</section>
+<section class="mt-12 mb-0">
+  <div class="mx-auto container">
+    <img src="https://plustek.com/content/en/film-and-photo-scanners/opticfilm-120-pro/myImages/of120pro-it8.jpg"
+      alt="">
+  </div>
+</section>
 
-      <h2 class="text-2xl font-black text-center mb-2">OpticFilm 120 Pro - Professional Medium Format and 35mm
-        Photographic
-        Film Scanner</h2>
-      <div class="swiper swiper1">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img class="w-full"
-              src="https://m.media-amazon.com/images/S/aplus-media/sc/b899e035-829e-4282-bf67-f56044a632d3.__CR0,0,970,600_PT0_SX970_V1___.jpg"
-              alt="">
-          </div>
-          <div class="swiper-slide">
-            <img class="w-full"
-              src="https://m.media-amazon.com/images/S/aplus-media/sc/b899e035-829e-4282-bf67-f56044a632d3.__CR0,0,970,600_PT0_SX970_V1___.jpg"
-              alt="">
-          </div>
-        </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+<section class="mt-0 mb-2 relative">
+  <div class="mx-auto container">
+    <div class="swiper swiper-tab swiper-tabs swiper-thumbs overflow-hidden" id="swiper-tabs1">
+      <div class="swiper-wrapper bg-transparent-gray-dark ">
+        <button class="swiper-slide w3-center py-2 text-white">高速ADF1</button>
+        <button class="swiper-slide w3-center py-2 text-white">高速ADF2</button>
+        <button class="swiper-slide w3-center py-2 text-white">高速ADF3</button>
+        <button class="swiper-slide w3-center py-2 text-white">高速ADF4</button>
+        <button class="swiper-slide w3-center py-2 text-white">高速ADF</button>
+        <p class="swiper-slide w3-center py-2 text-white">123</p>
       </div>
     </div>
-  </section>
-  <section class="mt-12 mb-2">
-    <div class="mx-auto container">
-      <h2 class="text-2xl font-black text-center mb-2">Create Incredible Scans with the Plustek Multiple Format Film
-        Scanner</h2>
-      <iframe class="video w-full aspect-video"
-        src="https://www.youtube.com/embed/ZoKdG9GaEFY?si=ByXnJl37AEHJDAJg" title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-  </section>
-  <section class="mt-12 mb-2">
-    <div class="mx-auto container">
-      <h2 class="text-2xl font-black text-center mb-2">OpticFilm 120 Pro - Professional Medium Format and 35mm
-        Photographic
-        Film Scanner</h2>
-      <div class="swiper swiper1">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img class="w-full"
-              src="https://m.media-amazon.com/images/S/aplus-media/sc/b899e035-829e-4282-bf67-f56044a632d3.__CR0,0,970,600_PT0_SX970_V1___.jpg"
-              alt="">
-          </div>
-          <div class="swiper-slide">
-            <img class="w-full"
-              src="https://m.media-amazon.com/images/S/aplus-media/sc/b899e035-829e-4282-bf67-f56044a632d3.__CR0,0,970,600_PT0_SX970_V1___.jpg"
-              alt="">
-          </div>
-        </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </div>
-    </div>
-  </section>
-  <section class="mt-12 mb-2">
-    <div class="mx-auto container">
-      <h2 class="text-2xl font-black text-center mb-2">Outstanding resolution to output extraordinary image</h2>
-      <div class="flex gap-6">
-        <di class="basic-1/3">
+    <div class="swiper swiper-tab-content overflow-hidden" id="swiper-content1">
+      <div class="swiper-wrapper">
+        <div class="w100 swiper-slide">
           <img
-            src="https://plustek.com/content/en/film-and-photo-scanners/opticfilm-120-pro/myImages/of120pro-workflow.jpg"
-            alt="">
+            src="https://plustek.com/content/products/workgroup-scanners/smartoffice-s30/images/tw/speedy-adf-large-scanner.jpg"
+            width="1600" height="659" alt="掃描速度40 ppm/分 &amp; 100自動進紙容量" title="1次100張進紙容量搭配40ppm/分的高速掃描速度">
 
-          <h3 class="text-xl font-bold">User-friendly Workflow</h3>
-          <p>Three types of film holders (35mm film strip, 35mm slides, and 120 film strip) are recognized by the
-            scanner
-            automatically.</p>
-        </di gap-6v>
-        <di class="basic-1/3">
+        </div>
+        <div class="w100 swiper-slide">
           <img
-            src="https://plustek.com/content/en/film-and-photo-scanners/opticfilm-120-pro/myImages/of120pro-workflow.jpg"
-            alt="">
-          <h3 class="text-xl font-bold">User-friendly Workflow</h3>
-          <p>Three types of film holders (35mm film strip, 35mm slides, and 120 film strip) are recognized by the
-            scanner
-            automatically.</p>
-        </di gap-6v>
-        <div class="basic-1/3">
+            src="https://plustek.com/content/products/workgroup-scanners/smartoffice-s30/images/tw/speedy-adf-large-scanner.jpg"
+            width="1600" height="659" alt="掃描速度40 ppm/分 &amp; 100自動進紙容量" title="1次100張進紙容量搭配40ppm/分的高速掃描速度">
+
+        </div>
+        <div class="w100 swiper-slide">
           <img
-            src="https://plustek.com/content/en/film-and-photo-scanners/opticfilm-120-pro/myImages/of120pro-workflow.jpg"
-            alt="">
-          <h3 class="text-xl font-bold">User-friendly Workflow</h3>
-          <p>Three types of film holders (35mm film strip, 35mm slides, and 120 film strip) are recognized by the
-            scanner
-            automatically.</p>
+            src="https://plustek.com/content/products/workgroup-scanners/smartoffice-s30/images/tw/speedy-adf-large-scanner.jpg"
+            width="1600" height="659" alt="掃描速度40 ppm/分 &amp; 100自動進紙容量" title="1次100張進紙容量搭配40ppm/分的高速掃描速度">
+
         </div>
+        <div class="w100 swiper-slide">
+          <img
+            src="https://plustek.com/content/products/workgroup-scanners/smartoffice-s30/images/tw/speedy-adf-large-scanner.jpg"
+            width="1600" height="659" alt="掃描速度40 ppm/分 &amp; 100自動進紙容量" title="1次100張進紙容量搭配40ppm/分的高速掃描速度">
 
-      </div>
-    </div>
-  </section>
-  <section class="mt-12 mb-0">
-    <div class="mx-auto container">
-      <img src="https://plustek.com/content/en/film-and-photo-scanners/opticfilm-120-pro/myImages/of120pro-it8.jpg"
-        alt="">
-    </div>
-  </section>
+        </div>
+        <div class="w100 swiper-slide">
+          <img
+            src="https://plustek.com/content/products/workgroup-scanners/smartoffice-s30/images/tw/speedy-adf-large-scanner.jpg"
+            width="1600" height="659" alt="掃描速度40 ppm/分 &amp; 100自動進紙容量" title="1次100張進紙容量搭配40ppm/分的高速掃描速度">
 
-  <section class="mt-0 mb-2 relative">
-    <div class="mx-auto container">
-      <div class="swiper swiper-tab swiper-tabs swiper-thumbs overflow-hidden" id="swiper-tabs1">
-        <div class="swiper-wrapper bg-transparent-gray-dark ">
-          <button class="swiper-slide w3-center py-2 text-white">高速ADF1</button>
-          <button class="swiper-slide w3-center py-2 text-white">高速ADF2</button>
-          <button class="swiper-slide w3-center py-2 text-white">高速ADF3</button>
-          <button class="swiper-slide w3-center py-2 text-white">高速ADF4</button>
-          <button class="swiper-slide w3-center py-2 text-white">高速ADF</button>
-          <p class="swiper-slide w3-center py-2 text-white">123</p>
         </div>
       </div>
-      <div class="swiper swiper-tab-content overflow-hidden" id="swiper-content1">
-        <div class="swiper-wrapper">
-          <div class="w100 swiper-slide">
-            <img
-              src="https://plustek.com/content/products/workgroup-scanners/smartoffice-s30/images/tw/speedy-adf-large-scanner.jpg"
-              width="1600" height="659" alt="掃描速度40 ppm/分 &amp; 100自動進紙容量" title="1次100張進紙容量搭配40ppm/分的高速掃描速度">
-
-          </div>
-          <div class="w100 swiper-slide">
-            <img
-              src="https://plustek.com/content/products/workgroup-scanners/smartoffice-s30/images/tw/speedy-adf-large-scanner.jpg"
-              width="1600" height="659" alt="掃描速度40 ppm/分 &amp; 100自動進紙容量" title="1次100張進紙容量搭配40ppm/分的高速掃描速度">
-
-          </div>
-          <div class="w100 swiper-slide">
-            <img
-              src="https://plustek.com/content/products/workgroup-scanners/smartoffice-s30/images/tw/speedy-adf-large-scanner.jpg"
-              width="1600" height="659" alt="掃描速度40 ppm/分 &amp; 100自動進紙容量" title="1次100張進紙容量搭配40ppm/分的高速掃描速度">
-
-          </div>
-          <div class="w100 swiper-slide">
-            <img
-              src="https://plustek.com/content/products/workgroup-scanners/smartoffice-s30/images/tw/speedy-adf-large-scanner.jpg"
-              width="1600" height="659" alt="掃描速度40 ppm/分 &amp; 100自動進紙容量" title="1次100張進紙容量搭配40ppm/分的高速掃描速度">
-
-          </div>
-          <div class="w100 swiper-slide">
-            <img
-              src="https://plustek.com/content/products/workgroup-scanners/smartoffice-s30/images/tw/speedy-adf-large-scanner.jpg"
-              width="1600" height="659" alt="掃描速度40 ppm/分 &amp; 100自動進紙容量" title="1次100張進紙容量搭配40ppm/分的高速掃描速度">
-
-          </div>
-        </div>
-        <div class="swiper-button-next swiper-arrow-next"></div>
-        <div class="swiper-button-prev swiper-arrow-prev"></div>
-      </div>
+      <div class="swiper-button-next swiper-arrow-next"></div>
+      <div class="swiper-button-prev swiper-arrow-prev"></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="mt-0 mb-2 text-center">
-    <div class="mx-auto container">
-      <button class="my-8 bg-red-500 px-32 py-2 text-white rounded-xl text-3xl font-black">Add to Cart</button>
+<section class="mt-0 mb-2 text-center">
+  <div class="mx-auto container">
+    <button class="my-8 bg-red-500 px-32 py-2 text-white rounded-xl text-3xl font-black">Add to Cart</button>
+  </div>
+</section>
+
+<section class="mt-0 mb-12 bg-neutral-200 py-12">
+  <div class="mx-auto container">
+    <div class="Q-items container max-w-5xl mx-auto">
+      <article class="Q-item mb-6 bg-white rounded-lg">
+        <div class="Q-title flex items-center gap-3 align-center p-4 border-b ">
+          <div class="Q-icon bg-black text-white text-center font-black py-1 min-w-16">Q</div>
+          <h3 class="font-black flex">Can ePhoto Z300 scans batch photos at one time?</h3>
+          {% comment %} <span class="ml-auto mr-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+          </span> {% endcomment %}
+        </div>
+        <div class="Q-answer flex items-center gap-3  p-4">
+          <div class="A-icon bg-orange-400 text-white text-center font-black py-1 min-w-16">A</div>
+          <p>
+            No, you have to insert the photos one by one, but you do not need to worry about the possible damage from
+            the friction pad or separate roller as the type of automatic sheetfed scanner.
+          </p>
+        </div>
+      </article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="mt-0 mb-12 bg-neutral-200 py-12">
-    <div class="mx-auto container">
-      <div class="Q-items container max-w-5xl mx-auto">
-        <article class="Q-item mb-6 bg-white rounded-lg">
-          <div class="Q-title flex items-center gap-3 align-center p-4 border-b cursor-pointer">
-            <div class="Q-icon bg-black text-white text-center font-black py-1 min-w-16">Q</div>
-            <h3 class="font-black flex">Can ePhoto Z300 scans batch photos at one time?</h3>
-            <span class="ml-auto mr-4">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-              </svg>
-            </span>
-          </div>
-          <div class="Q-answer flex items-center gap-3  p-4">
-            <div class="A-icon bg-orange-400 text-white text-center font-black py-1 min-w-16">A</div>
-            <p>
-              No, you have to insert the photos one by one, but you do not need to worry about the possible damage from
-              the friction pad or separate roller as the type of automatic sheetfed scanner.
-            </p>
-          </div>
-        </article>
-      </div>
+<section class="mt-0 mb-12  py-4 px-12">
+  <div class="mx-auto container">
+    <h2 class="text-3xl font-black mb-2">Outstanding resolution to output extraordinary image</h2>
+    <p class="text-lg font-black mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, soluta
+      deleniti incidunt exercitationem aut molestias perferendis? Deserunt vero est tenetur quos ullam tempore eaque
+      dolorem laudantium. Labore nemo doloremque assumenda.</p>
+    <ul>
+      <li class="mt-6">
+        <h3 class="text-xl font-black">Flagship Scanner Software Included – SilverFast Ai Studio</h3>
+        <p>16-bit Histogram is a graphic representation of statistical visuals that distributes the brightness value
+          of
+          a digital image and makes it as smooth as the original file without gaps as an 8-bit file.</p>
+      </li>
+      <li class="mt-6">
+        <h3 class="text-xl font-black">Flagship Scanner Software Included – SilverFast Ai Studio</h3>
+        <p>16-bit Histogram is a graphic representation of statistical visuals that distributes the brightness value
+          of
+          a digital image and makes it as smooth as the original file without gaps as an 8-bit file.</p>
+      </li>
+      <li class="mt-6">
+        <h3 class="text-xl font-black">Flagship Scanner Software Included – SilverFast Ai Studio</h3>
+        <p>16-bit Histogram is a graphic representation of statistical visuals that distributes the brightness value
+          of
+          a digital image and makes it as smooth as the original file without gaps as an 8-bit file.</p>
+      </li>
+      <li class="mt-6">
+        <h3 class="text-xl font-black">Flagship Scanner Software Included – SilverFast Ai Studio</h3>
+        <p>16-bit Histogram is a graphic representation of statistical visuals that distributes the brightness value
+          of
+          a digital image and makes it as smooth as the original file without gaps as an 8-bit file.</p>
+      </li>
+      <li class="mt-6">
+        <h3 class="text-xl font-black">Flagship Scanner Software Included – SilverFast Ai Studio</h3>
+        <p>16-bit Histogram is a graphic representation of statistical visuals that distributes the brightness value
+          of
+          a digital image and makes it as smooth as the original file without gaps as an 8-bit file.</p>
+      </li>
+      <li class="mt-6">
+        <h3 class="text-xl font-black">Flagship Scanner Software Included – SilverFast Ai Studio</h3>
+        <p>16-bit Histogram is a graphic representation of statistical visuals that distributes the brightness value
+          of
+          a digital image and makes it as smooth as the original file without gaps as an 8-bit file.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class="mt-0 mb-12 py-16 px-24 bg-my-orange">
+  <div class="mx-auto container">
+    <div class="flex gap-12">
+      <a class="w-3/12 flex flex-col items-center border-2 border-slate-50 rounded-2xl gap-6 pt-12 pb-24 px-8 transition hover:translate-y-[-1rem] "
+        href="https://plustek.com/us/support/faq.php">
+        <img class="max-w-28" src="{{ 'faq.png' | asset_url }}" alt="Example Image">
+        <h3 class="text-xl text-white">FAQ</h3>
+        <h4 class="text-base text-white">Knowledge Base</h4>
+      </a>
+      <a class="w-3/12 flex flex-col items-center border-2 border-slate-50 rounded-2xl gap-6 pt-12 pb-24 px-8 transition hover:translate-y-[-1rem] "
+        href="https://plustek.com/us/support/faq.php">
+        <img class="max-w-28" src="{{ 'tutorial.png' | asset_url }}" alt="Example Image">
+        <h3 class="text-xl text-white">Tutorials</h3>
+        <h4 class="text-base text-white text-center">Watch Easy-to-Follow Videos on YouTube</h4>
+      </a>
+      <a class="w-3/12 flex flex-col items-center border-2 border-slate-50 rounded-2xl gap-6 pt-12 pb-24  px-8 transition hover:translate-y-[-1rem]"
+        href="https://plustek.com/us/support/faq.php">
+        <img class="max-w-28" src="{{ 'contact-us.png' | asset_url }}" alt="Example Image">
+        <h3 class="text-xl text-white">Contact Us</h3>
+        <ul>
+          <li class="text-base text-white text-center">1-800-713-9009</li>
+          <li class="text-base text-white text-center">support@raven.com</li>
+        </ul>
+        <h4 class="text-base text-white"> </h4>
+
+      </a>
+      <a class="w-3/12 flex flex-col items-center border-2 border-slate-50 rounded-2xl gap-6 pt-12 pb-24  px-8 transition hover:translate-y-[-1rem]"
+        href="https://plustek.com/us/support/faq.php">
+        <img class="max-w-28" src="{{ 'download.png' | asset_url }}" alt="Example Image">
+        <h3 class="text-xl text-white">Download</h3>
+        <ul>
+          <li class="text-base text-white text-center">User Manuale</li>
+          <li class="text-base text-white text-center">Quick Start Guide</li>
+          <li class="text-base text-white text-center">Windows TWAIN Driver</li>
+          <li class="text-base text-white text-center">Mac TWAIN Driver</li>
+        </ul>
+      </a>
     </div>
-  </section>
+</section>
 
-  <section class="mt-0 mb-12  py-4 px-12">
-    <div class="mx-auto container">
-      <h2 class="text-3xl font-black mb-2">Outstanding resolution to output extraordinary image</h2>
-      <p class="text-lg font-black mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, soluta
-        deleniti incidunt exercitationem aut molestias perferendis? Deserunt vero est tenetur quos ullam tempore eaque
-        dolorem laudantium. Labore nemo doloremque assumenda.</p>
-      <ul>
-        <li class="mt-6">
-          <h3 class="text-xl font-black">Flagship Scanner Software Included – SilverFast Ai Studio</h3>
-          <p>16-bit Histogram is a graphic representation of statistical visuals that distributes the brightness value
-            of
-            a digital image and makes it as smooth as the original file without gaps as an 8-bit file.</p>
-        </li>
-        <li class="mt-6">
-          <h3 class="text-xl font-black">Flagship Scanner Software Included – SilverFast Ai Studio</h3>
-          <p>16-bit Histogram is a graphic representation of statistical visuals that distributes the brightness value
-            of
-            a digital image and makes it as smooth as the original file without gaps as an 8-bit file.</p>
-        </li>
-        <li class="mt-6">
-          <h3 class="text-xl font-black">Flagship Scanner Software Included – SilverFast Ai Studio</h3>
-          <p>16-bit Histogram is a graphic representation of statistical visuals that distributes the brightness value
-            of
-            a digital image and makes it as smooth as the original file without gaps as an 8-bit file.</p>
-        </li>
-        <li class="mt-6">
-          <h3 class="text-xl font-black">Flagship Scanner Software Included – SilverFast Ai Studio</h3>
-          <p>16-bit Histogram is a graphic representation of statistical visuals that distributes the brightness value
-            of
-            a digital image and makes it as smooth as the original file without gaps as an 8-bit file.</p>
-        </li>
-        <li class="mt-6">
-          <h3 class="text-xl font-black">Flagship Scanner Software Included – SilverFast Ai Studio</h3>
-          <p>16-bit Histogram is a graphic representation of statistical visuals that distributes the brightness value
-            of
-            a digital image and makes it as smooth as the original file without gaps as an 8-bit file.</p>
-        </li>
-        <li class="mt-6">
-          <h3 class="text-xl font-black">Flagship Scanner Software Included – SilverFast Ai Studio</h3>
-          <p>16-bit Histogram is a graphic representation of statistical visuals that distributes the brightness value
-            of
-            a digital image and makes it as smooth as the original file without gaps as an 8-bit file.</p>
-        </li>
-      </ul>
-    </div>
-  </section>
-  <section class="mt-0 mb-12 py-16 px-24 bg-my-orange">
-    <div class="mx-auto container">
-      <div class="flex gap-12">
-        <div class="w-3/12 flex flex-col items-center border-2 border-slate-50 rounded-2xl gap-6 pt-12 pb-24 px-8"
-          href="https://plustek.com/us/support/faq.php">
-          <img class="max-w-28" src="{{ 'faq.png' | asset_url }}" alt="Example Image">
-          <h3 class="text-xl text-white">FAQ</h3>
-          <h4 class="text-base text-white">Knowledge Base</h4>
-        </div>
-        <div class="w-3/12 flex flex-col items-center border-2 border-slate-50 rounded-2xl gap-6 pt-12 pb-24 px-8"
-          href="https://plustek.com/us/support/faq.php">
-          <img class="max-w-28" src="{{ 'tutorial.png' | asset_url }}" alt="Example Image">
-          <h3 class="text-xl text-white">Tutorials</h3>
-          <h4 class="text-base text-white text-center">Watch Easy-to-Follow Videos on YouTube</h4>
-        </div>
-        <div class="w-3/12 flex flex-col items-center border-2 border-slate-50 rounded-2xl gap-6 pt-12 pb-24  px-8"
-          href="https://plustek.com/us/support/faq.php">
-          <img class="max-w-28" src="{{ 'contact-us.png' | asset_url }}" alt="Example Image">
-          <h3 class="text-xl text-white">Contact Us</h3>
-          <ul>
-            <li class="text-base text-white text-center">1-800-713-9009</li>
-            <li class="text-base text-white text-center"><a href="mailto:support@raven.com" class="underline ">support@raven.com</a></li>
-          </ul>
-          <h4 class="text-base text-white"> </h4>
-
-        </div>
-        <div class="w-3/12 flex flex-col items-center border-2 border-slate-50 rounded-2xl gap-6 pt-12 pb-24  px-8"
-          href="https://plustek.com/us/support/faq.php">
-          <img class="max-w-28" src="{{ 'download.png' | asset_url }}" alt="Example Image">
-          <h3 class="text-xl text-white">Download</h3>
-          <ul>
-            <li class="text-base text-white text-center">User Manuale</li>
-            <li class="text-base text-white text-center">Quick Start Guide</li>
-            <li class="text-base text-white text-center">Windows TWAIN Driver</li>
-            <li class="text-base text-white text-center">Mac TWAIN Driver</li>
-          </ul>
-        </div>
-      </div>
-  </section>
-
-
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
   const swiper = new Swiper('.swiper1', {
-    // Optional parameters
     loop: true,
-
-    // If we need pagination
     pagination: {
       el: '.swiper-pagination',
     },
-
-    //   // Navigation arrows
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',

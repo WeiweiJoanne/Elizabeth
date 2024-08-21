@@ -1,14 +1,14 @@
-
-<div class="flex">
-    <div class="basis-1/12 small-images">
+<div class="flex gap-2 justify-center items-center flex-row">
+    <div class="basis-12/12 thumbnails md:basis-1/12">
         {% for media in product.media %}
         <div class="h-100 overflow-hidden p-1 shadow-2xl ">
             {% case media.media_type %}
             {% when 'image' %}
-            <img src="{{ media |  image_url: width: 1280 }}" alt="{{ media.preview_image.alt}}"
-                class="w-full h-full object-cover ">
+            <img src="{{ media |  image_url: width: 45 }}" data-large="{{ media |  image_url: width: 572 }}"
+                alt="{{ media.preview_image.alt}}"
+                class="w-full h-full object-cover thumbnail">
             {% when 'external_video' %}
-            {{ media | external_video_tag: class: "w-full h-80 object-cover" }}
+            {{ media | external_video_tag: class: "w-full h-auto object-cover" }}
             {% when 'video' %}
             {{ media | video_tag: controls: true, class: "w-full h-80 object-cover" }}
             {% else %}
@@ -17,75 +17,26 @@
         </div>
         {% endfor %}
     </div>
-    <div class="basis-11/12 image">
-        <img class="" src="//margaret-development-online-store.myshopify.com/cdn/shop/files/81cPM99QlgL._AC_SX679.jpg?v=1723735166&amp;width=540"
-            alt="Plustek OpticFilm 120 pro - scan 35mm Film Strips, Slide and 120/220 Film Scanner. Scan from 6x4.5 up to 6x12cm in Size. Support Mac and Windows">
-    </div>
-</div>
-{% comment %} <div class="hidden md:block">
-    {% for media in product.media %}
-    <div class="h-100 overflow-hidden p-2">
-
-        {% case media.media_type %}
-
-        {% when 'image' %}
-        <img src="{{ media |  image_url: width: 1280 }}" alt="{{ media.preview_image.alt}}"
-            class="w-full h-full object-cover">
-        {% when 'external_video' %}
-        {{ media | external_video_tag: class: "w-full h-80 object-cover" }}
-        {% when 'video' %}
-        {{ media | video_tag: controls: true, class: "w-full h-80 object-cover" }}
-        {% else %}
-
-        {% endcase %}
-    </div>
-    {% endfor %}
-</div>
-
-<div class="md:hidden">
-    <div class="h-94 swiper">
-        <div class="swiper-wrapper">
-            {% for media in product.media %}
-            <div class="swiper-slide">
-                <div class="h-80 overflow-hidden">
-                    {% case media.media_type %}
-
-                    {% when 'image' %}
-                    <img src="{{ media |  image_url: width: 1280 }}" alt="{{ media.preview_image.alt}}"
-                        class="w-full h-full object-cover">
-                    {% when 'external_video' %}
-                    {{ media | external_video_tag: class: "w-full h-80 object-cover" }}
-                    {% when 'video' %}
-                    {{ media | video_tag: controls: true, class: "w-full h-80 object-cover" }}
-                    {% else %}
-
-                    {% endcase %}
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+    <div class="basis-11/12 lg:basis-10/12 ">
+        <img id="main-image" src="{{ product.featured_image | image_url: width: 572 }}" alt="{{ product.title }}" />
     </div>
 </div>
 
 <script>
-    const swiper = new Swiper('.swiper', {
-        // Optional parameters
-        loop: true,
+    // 選取所有縮圖
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    // 選取主圖片
+    const mainImage = document.getElementById('main-image');
 
-        // If we need pagination
-        pagination: {
-            el: '.swiper-pagination',
-        },
+    // 對每個縮圖添加 hover 事件
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('mouseover', function () {
+            // 获取缩略图对应的大图路径
+            const largeImageUrl = this.getAttribute('data-large');
+            console.log("🚀 ~ thumbnail.addEventListener ~ largeImageUrl:", largeImageUrl)
 
-        //   // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-
-
+            // 将主图片的 src 替换为悬停缩略图对应的大图路径
+            mainImage.src = largeImageUrl;
+        });
     });
-</script> {% endcomment %}
+</script>

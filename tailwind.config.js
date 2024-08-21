@@ -3,6 +3,9 @@ module.exports = {
   content: ["./layout/*.liquid", "./sections/*.liquid", "./snippets/*.liquid", "./templates/customers/*.liquid", "./templates/*.liquid"],
   theme: {
     extend: {
+       translate: {
+        '4.25': '17rem',
+      },
       colors: {
         "transparent-gray": {
           light: "rgba(200, 200, 200, 0.3)",
