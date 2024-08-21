@@ -11,7 +11,7 @@
         {% if image_value != blank %}
         <div class="swiper-slide">
           <img class="w-full"
-            src="{{ image_value | img_url: 'large' }}"
+            src="{{ image_value | image_url: width: 1280 }}"
             alt="">
         </div>
         {% endif %}

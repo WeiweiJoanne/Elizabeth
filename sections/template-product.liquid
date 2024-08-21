@@ -40,7 +40,9 @@
 </section>
 <section class="mt-12 mb-2">
   <div class="mx-auto container">
-    <h2 class="text-2xl font-black text-center mb-2">OpticFilm 120 Pro - Professional Medium Format and 35mm
+    {% assign slider_num = 2 %}
+    {% render 'slider', slider_num: slider_num %}
+    {% comment %} <h2 class="text-2xl font-black text-center mb-2">OpticFilm 120 Pro - Professional Medium Format and 35mm
       Photographic
       Film Scanner</h2>
     <div class="swiper swiper1">
@@ -59,7 +61,7 @@
       <div class="swiper-pagination"></div>
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
-    </div>
+    </div> {% endcomment %}
   </div>
 </section>
 <section class="mt-12 mb-2">
