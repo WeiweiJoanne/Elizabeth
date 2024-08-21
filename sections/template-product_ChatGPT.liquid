@@ -1,0 +1,106 @@
+{% comment %} {{ product.metafields.custom.feature }} {% endcomment %}
+{% comment %} <img src="{{ product.metafields.custom.image | image_url: width: 1280 }}" alt=""> {% endcomment %}
+
+<div class="max-w-3xl mx-auto my-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div id="a-block">
+           {% for block in section.blocks %}
+                {% case block.type %}
+                    {% when 'title' %}
+
+                        {{ product.metafields.custom.feature }}
+                    {% else %}
+                        
+                {% endcase %}
+                
+            
+           {% endfor %}
+        </div>
+
+
+
+        <div class="product--media">
+
+                {% render 'product-media' %}
+
+
+        </div>
+        <div class="product--infomation"> </div>
+    </div>
+
+</div>
+
+<div class="recommended-products-section" style="background-image: url({{ section.settings.section_background | img_url: 'large' }});">
+  <h2>{{ section.settings.section_heading }}</h2>
+  <p>{{ section.settings.section_description }}</p>
+  <p>{{ product.metafields.custom.feature  }}</p>
+
+  <div class="recommended-products">
+    {% for block in section.blocks %}
+      <div class="product-card">
+        {% assign product = all_products[block.settings.product] %}
+        {% if product %}
+          <a href="{{ product.url }}">
+              
+            <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+            <h3>{{ product.title }}</h3>
+            <p>{{ block.settings.product_caption }}</p>
+          </a>
+        {% else %}
+          <p>No product selected.</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% comment %} {% schema %}
+{
+  "name": "Recommended Products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section Heading",
+      "default": "You may also like"
+    },
+    {
+      "type": "textarea",
+      "id": "section_description",
+      "label": "Section Description",
+      "default": "Check out these recommended products"
+    },
+    {
+      "type": "image_picker",
+      "id": "section_background",
+      "label": "Background Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_recommendation",
+      "name": "Product Recommendation",
+      "settings": [
+        {
+          "type": "text",
+          "id": "product_caption",
+          "label": "Product Caption",
+          "default": "Recommended for you"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Recommended Products",
+      "category": "Product Pages",
+      "settings": {
+        "section_heading": "You may also like",
+        "section_description": "Check out these recommended products"
+      }
+    }
+  ]
+}
+
+{% endschema %} {% endcomment %}

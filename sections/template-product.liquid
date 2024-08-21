@@ -1,0 +1,11 @@
+{% comment %} {{ product.metafields.custom.feature }} {% endcomment %}
+{% comment %} <img src="{{ product.metafields.custom.image | image_url: width: 1280 }}" alt=""> {% endcomment %}
+
+<div class="max-w-3xl mx-auto my-8">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+    <div class="product--media">
+      {% render 'product-media' %}
+    </div>
+    <div class="product--infomation"> </div>
+  </div>
+</div>
