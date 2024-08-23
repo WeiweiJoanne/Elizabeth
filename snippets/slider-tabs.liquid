@@ -1,0 +1,27 @@
+{% assign slider_num = 5 %}
+<section class="mt-0 mb-2 relative">
+    <div class="mx-auto container">
+        <div class="swiper swiper-tab swiper-tabs swiper-thumbs overflow-hidden" id="swiper-tabs1">
+            <div class="swiper-wrapper bg-transparent-gray-dark ">
+                {% for i in (1..slider_num) %}
+                {% assign tab_name = 'slider_tab_' | append: i | append: '_name' %}
+                <button class="swiper-slide w3-center py-2 text-white">{{ product.metafields.custom[tab_name] }}</button>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="swiper swiper-tab-content overflow-hidden" id="swiper-content1">
+            <div class="swiper-wrapper">
+                {% for i in (1..slider_num) %}
+                    {% assign tab_name = 'slider_tab_' | append: i | append: '_name' %}
+                    {% assign tab_content = 'slider_tab_' | append: i | append: '_image' %}
+                <div class="w100 swiper-slide">
+                    <img src="{{ product.metafields.custom[tab_content] |  image_url: width: 1600 }}" alt="{{product.metafields.custom[tab_name]}}" title="{{product.metafields.custom[tab_name]}}">
+                </div>
+                {% endfor %}
+
+            </div>
+            <div class="swiper-button-next swiper-arrow-next"></div>
+            <div class="swiper-button-prev swiper-arrow-prev"></div>
+        </div>
+    </div>
+</section>

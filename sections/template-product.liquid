@@ -4,7 +4,7 @@
 
 
 
-<section class="">
+<section>
   <div class="mx-auto container flex my-8 items-center flex-col gap-4 lg:flex-row lg:gap-0">
     <div class="px-2 product--media basis-12/12 lg:basis-5/12 xl:basis-6/12 2xl:basis-5/12">
       {% render 'product-media' %}
@@ -22,8 +22,8 @@
 </section>
 
 
-{% assign slider_num = 1 %}
-{% render 'slider', slider_num: slider_num %}
+{% comment %} {% assign slider_num = 1 %} {% endcomment %}
+{% render 'slider', slider_num: 1 %}
 
 <section class="mt-12 mb-2">
   <div class="mx-auto container">
@@ -37,64 +37,15 @@
 </section>
 
 
-{% assign slider_num = 2 %}
-{% render 'slider', slider_num: slider_num %}
+{% comment %} {% assign slider_num = 2 %} {% endcomment %}
+{% render 'slider', slider_num: 2 %}
 
 
 {% render 'card' %}
 
 {% render 'single-image', single_image: 1 %}
 
-<section class="mt-0 mb-2 relative">
-  <div class="mx-auto container">
-    <div class="swiper swiper-tab swiper-tabs swiper-thumbs overflow-hidden" id="swiper-tabs1">
-      <div class="swiper-wrapper bg-transparent-gray-dark ">
-        <button class="swiper-slide w3-center py-2 text-white">高速ADF1</button>
-        <button class="swiper-slide w3-center py-2 text-white">高速ADF2</button>
-        <button class="swiper-slide w3-center py-2 text-white">高速ADF3</button>
-        <button class="swiper-slide w3-center py-2 text-white">高速ADF4</button>
-        <button class="swiper-slide w3-center py-2 text-white">高速ADF</button>
-        <p class="swiper-slide w3-center py-2 text-white">123</p>
-      </div>
-    </div>
-    <div class="swiper swiper-tab-content overflow-hidden" id="swiper-content1">
-      <div class="swiper-wrapper">
-        <div class="w100 swiper-slide">
-          <img
-            src="https://plustek.com/content/products/workgroup-scanners/smartoffice-s30/images/tw/speedy-adf-large-scanner.jpg"
-            width="1600" height="659" alt="掃描速度40 ppm/分 &amp; 100自動進紙容量" title="1次100張進紙容量搭配40ppm/分的高速掃描速度">
-
-        </div>
-        <div class="w100 swiper-slide">
-          <img
-            src="https://plustek.com/content/products/workgroup-scanners/smartoffice-s30/images/tw/speedy-adf-large-scanner.jpg"
-            width="1600" height="659" alt="掃描速度40 ppm/分 &amp; 100自動進紙容量" title="1次100張進紙容量搭配40ppm/分的高速掃描速度">
-
-        </div>
-        <div class="w100 swiper-slide">
-          <img
-            src="https://plustek.com/content/products/workgroup-scanners/smartoffice-s30/images/tw/speedy-adf-large-scanner.jpg"
-            width="1600" height="659" alt="掃描速度40 ppm/分 &amp; 100自動進紙容量" title="1次100張進紙容量搭配40ppm/分的高速掃描速度">
-
-        </div>
-        <div class="w100 swiper-slide">
-          <img
-            src="https://plustek.com/content/products/workgroup-scanners/smartoffice-s30/images/tw/speedy-adf-large-scanner.jpg"
-            width="1600" height="659" alt="掃描速度40 ppm/分 &amp; 100自動進紙容量" title="1次100張進紙容量搭配40ppm/分的高速掃描速度">
-
-        </div>
-        <div class="w100 swiper-slide">
-          <img
-            src="https://plustek.com/content/products/workgroup-scanners/smartoffice-s30/images/tw/speedy-adf-large-scanner.jpg"
-            width="1600" height="659" alt="掃描速度40 ppm/分 &amp; 100自動進紙容量" title="1次100張進紙容量搭配40ppm/分的高速掃描速度">
-
-        </div>
-      </div>
-      <div class="swiper-button-next swiper-arrow-next"></div>
-      <div class="swiper-button-prev swiper-arrow-prev"></div>
-    </div>
-  </div>
-</section>
+{% render 'slider-tabs' %}
 
 <section class="mt-0 mb-2 text-center">
   <div class="mx-auto container">
