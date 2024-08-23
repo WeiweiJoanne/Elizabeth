@@ -21,13 +21,10 @@
   </div>
 </section>
 
-<section class="mt-12 mb-2">
-  <div class="mx-auto container">
-    {% assign slider_num = 1 %}
-    {% render 'slider', slider_num: slider_num %}
-  </div>
-  </div>
-</section>
+
+{% assign slider_num = 1 %}
+{% render 'slider', slider_num: slider_num %}
+
 <section class="mt-12 mb-2">
   <div class="mx-auto container">
     <h2 class="text-2xl font-black text-center mb-2">Create Incredible Scans with the Plustek Multiple Format Film
@@ -38,68 +35,14 @@
       referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </div>
 </section>
-<section class="mt-12 mb-2">
-  <div class="mx-auto container">
-    {% assign slider_num = 2 %}
-    {% render 'slider', slider_num: slider_num %}
-    {% comment %} <h2 class="text-2xl font-black text-center mb-2">OpticFilm 120 Pro - Professional Medium Format and 35mm
-      Photographic
-      Film Scanner</h2>
-    <div class="swiper swiper1">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img class="w-full"
-            src="https://m.media-amazon.com/images/S/aplus-media/sc/b899e035-829e-4282-bf67-f56044a632d3.__CR0,0,970,600_PT0_SX970_V1___.jpg"
-            alt="">
-        </div>
-        <div class="swiper-slide">
-          <img class="w-full"
-            src="https://m.media-amazon.com/images/S/aplus-media/sc/b899e035-829e-4282-bf67-f56044a632d3.__CR0,0,970,600_PT0_SX970_V1___.jpg"
-            alt="">
-        </div>
-      </div>
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-    </div> {% endcomment %}
-  </div>
-</section>
-<section class="mt-12 mb-2">
-  <div class="mx-auto container">
-    <h2 class="text-2xl font-black text-center mb-2">Outstanding resolution to output extraordinary image</h2>
-    <div class="flex gap-6">
-      <di class="basic-1/3">
-        <img
-          src="https://plustek.com/content/en/film-and-photo-scanners/opticfilm-120-pro/myImages/of120pro-workflow.jpg"
-          alt="">
 
-        <h3 class="text-xl font-bold">User-friendly Workflow</h3>
-        <p>Three types of film holders (35mm film strip, 35mm slides, and 120 film strip) are recognized by the
-          scanner
-          automatically.</p>
-      </di gap-6v>
-      <di class="basic-1/3">
-        <img
-          src="https://plustek.com/content/en/film-and-photo-scanners/opticfilm-120-pro/myImages/of120pro-workflow.jpg"
-          alt="">
-        <h3 class="text-xl font-bold">User-friendly Workflow</h3>
-        <p>Three types of film holders (35mm film strip, 35mm slides, and 120 film strip) are recognized by the
-          scanner
-          automatically.</p>
-      </di gap-6v>
-      <div class="basic-1/3">
-        <img
-          src="https://plustek.com/content/en/film-and-photo-scanners/opticfilm-120-pro/myImages/of120pro-workflow.jpg"
-          alt="">
-        <h3 class="text-xl font-bold">User-friendly Workflow</h3>
-        <p>Three types of film holders (35mm film strip, 35mm slides, and 120 film strip) are recognized by the
-          scanner
-          automatically.</p>
-      </div>
 
-    </div>
-  </div>
-</section>
+{% assign slider_num = 2 %}
+{% render 'slider', slider_num: slider_num %}
+
+
+{% render 'card' %}
+
 <section class="mt-12 mb-0">
   <div class="mx-auto container">
     <img src="https://plustek.com/content/en/film-and-photo-scanners/opticfilm-120-pro/myImages/of120pro-it8.jpg"
