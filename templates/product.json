@@ -43,7 +43,7 @@
                     "type":"slider-tabs"
                 }
             },
-            "block_order": ["FAQ"]
+            "block_order": ["Slider-tabs"]
         }
     },
     "order": [ "template-product-banner","template-slider-1","template-faq","template-slider-2","template-slider-tabs" ]
