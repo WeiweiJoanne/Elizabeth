@@ -35,7 +35,16 @@
                 }
             },
             "block_order": ["FAQ"]
+        },
+        "template-slider-tabs": {
+            "type": "template-slider-tabs",
+            "blocks": {
+                "Slider-tabs":{
+                    "type":"slider-tabs"
+                }
+            },
+            "block_order": ["FAQ"]
         }
     },
-    "order": [ "template-product-banner","template-slider-1","template-faq","template-slider-2" ]
+    "order": [ "template-product-banner","template-slider-1","template-faq","template-slider-2","template-slider-tabs" ]
 }
