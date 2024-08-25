@@ -1,45 +1,74 @@
-{% comment %} {{ product.metafields.custom.feature }} {% endcomment %}
-{% comment %} <img src="{{ product.metafields.custom['slider1_image3'] | image_url: width: 1280 }}" alt="">
-{% endcomment %}
 
 
 
-<section>
-  <div class="mx-auto container flex my-8 items-center flex-col gap-4 lg:flex-row lg:gap-0">
-    <div class="px-2 product--media basis-12/12 lg:basis-5/12 xl:basis-6/12 2xl:basis-5/12">
-      {% render 'product-media' %}
-    </div>
-    <div class="px-2 product--infomation basis-12/12 lg:basis-7/12 xl:basis-6/12 2xl:basis-7/12">
-      <h1 class="text-lg font-black md:text-2xl xl:text-3xl">
-        {{ product.title }}
-      </h1>
-      <p class="mt-4 text-sm xl:text-base">
-        {{ product.description }}
-      </p>
-      <button class="my-2 mt-4 bg-red-500 px-12 py-2 text-white rounded-xl text-xl">Add to Cart</button>
+{% for block in section.blocks %}
+{% case block.type %}
+{% when 'Slider' %}
+<section class="mt-12 mb-2">
+  <div class="mx-auto container">
+    <h2 class="text-2xl font-black text-center mb-2">{{ block.settings.heading}}</h2>
+    <div class="swiper swiper1">
+      <div class="swiper-wrapper">
+        {% for num in (1..3) %}
+        {% assign image = 'image_' | append: num %}
+        {% if block.settings[image] != blank %}
+
+        <div class="swiper-slide">
+          <img class="w-full" src="{{ block.settings[image] | image_url: width: 1280 }}" alt="">
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
   </div>
 </section>
+{% comment %} {% when 'FAQ_block' %}
+  <section class="mt-0 mb-12 bg-neutral-200 py-12">
+    <div class="mx-auto container">
+      <div class="Q-items container max-w-5xl mx-auto">
+        {% for faq in section.blocks %}
+          {% if faq.type == 'FAQ_item' %}
+            
+            <article class="Q-item mb-6 bg-white rounded-lg">
+              <div class="Q-title flex items-center gap-3 align-center p-4 border-b ">
+                <div class="Q-icon bg-black text-white text-center font-black py-1 min-w-16">Q</div>
+                <h3 class="font-black flex">{{ faq.settings.question }}</h3>
+                <span class="ml-auto mr-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </span>
+              </div>
+              <div class="Q-answer flex items-center gap-3  p-4">
+                <div class="A-icon bg-orange-400 text-white text-center font-black py-1 min-w-16">A</div>
+                <p>{{ faq.settings.answer }}</p>
+              </div>
+            </article>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </section> {% endcomment %}
 
+{% else %}
+{% endcase %}
+{% endfor %}
 
-{% comment %} {% assign slider_num = 1 %} {% endcomment %}
-{% render 'slider', slider_num: 1 %}
 
 <section class="mt-12 mb-2">
   <div class="mx-auto container">
     <h2 class="text-2xl font-black text-center mb-2">Create Incredible Scans with the Plustek Multiple Format Film
       Scanner</h2>
-    <iframe class="video w-full aspect-video"
-      src="https://www.youtube.com/embed/ZoKdG9GaEFY?si=ByXnJl37AEHJDAJg" title="YouTube video player" frameborder="0"
+    <iframe class="video w-full aspect-video" src="https://www.youtube.com/embed/ZoKdG9GaEFY?si=ByXnJl37AEHJDAJg"
+      title="YouTube video player" frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </div>
 </section>
-
-
-{% comment %} {% assign slider_num = 2 %} {% endcomment %}
-{% render 'slider', slider_num: 2 %}
-
 
 {% render 'card' %}
 
@@ -53,30 +82,30 @@
   </div>
 </section>
 
-<section class="mt-0 mb-12 bg-neutral-200 py-12">
-    <div class="mx-auto container">
-        <div class="Q-items container max-w-5xl mx-auto">
-            {% for faq in section.blocks %}
-                <article class="Q-item mb-6 bg-white rounded-lg">
-                <div class="Q-title flex items-center gap-3 align-center p-4 border-b ">
-                    <div class="Q-icon bg-black text-white text-center font-black py-1 min-w-16">Q</div>
-                    <h3 class="font-black flex">{{ faq.settings.question }}</h3>
-                    <span class="ml-auto mr-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                        </svg>
-                    </span>
-                </div>
-                <div class="Q-answer flex items-center gap-3  p-4">
-                    <div class="A-icon bg-orange-400 text-white text-center font-black py-1 min-w-16">A</div>
-                    <p>{{ faq.settings.answer }}</p>
-                </div>
-            </article>
-            {% endfor %}
+{% comment %} <section class="mt-0 mb-12 bg-neutral-200 py-12">
+  <div class="mx-auto container">
+    <div class="Q-items container max-w-5xl mx-auto">
+      {% for faq in section.blocks %}
+      <article class="Q-item mb-6 bg-white rounded-lg">
+        <div class="Q-title flex items-center gap-3 align-center p-4 border-b ">
+          <div class="Q-icon bg-black text-white text-center font-black py-1 min-w-16">Q</div>
+          <h3 class="font-black flex">{{ faq.settings.question }}</h3>
+          <span class="ml-auto mr-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+          </span>
         </div>
+        <div class="Q-answer flex items-center gap-3  p-4">
+          <div class="A-icon bg-orange-400 text-white text-center font-black py-1 min-w-16">A</div>
+          <p>{{ faq.settings.answer }}</p>
+        </div>
+      </article>
+      {% endfor %}
     </div>
-</section>
+  </div>
+</section> {% endcomment %}
 
 <section class="mt-0 mb-12  py-4 px-12">
   <div class="mx-auto container">
@@ -165,6 +194,7 @@
 </section>
 
 
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
   const swiper = new Swiper('.swiper1', {
@@ -197,27 +227,3 @@
   })
 </script>
 
-{% schema %}
-  {
-  "name": "FAQ block",
-  "blocks": [
-      {
-          "type": "FAQ_item",
-          "name": "FAQ",
-          "settings": [
-              {
-                  "type": "text",
-                  "id": "question",
-                  "label": "Question"
-              },
-              {
-                  "type": "richtext",
-                  "id": "answer",
-                  "label": "Answer"
-              }
-          ],
-          "limit": 1
-      }
-  ]
-  }
-  {% endschema %}

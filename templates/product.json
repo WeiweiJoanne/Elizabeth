@@ -1,8 +1,41 @@
 {
     "sections": {
-        "template": {
-            "type": "template-product"
+        "template-product-banner": {
+            "type": "template-product-banner",
+            "blocks": {
+                
+            },
+            "block_order": ["template-product-banner"]
+        },
+        "template-slider-1": {
+            "type": "template-slider-1",
+            "blocks": {
+                "slider": {
+                    "type":"Slider"
+                }
+               
+            },
+            "block_order": ["slider"]
+        },
+        "template-slider-2": {
+            "type": "template-slider-2",
+            "blocks": {
+                "slider": {
+                    "type":"Slider"
+                }
+               
+            },
+            "block_order": ["slider"]
+        },
+        "template-faq": {
+            "type": "template-faq",
+            "blocks": {
+                "FAQ":{
+                    "type":"FAQ_item"
+                }
+            },
+            "block_order": ["FAQ"]
         }
     },
-    "order": [ "template" ]
+    "order": [ "template-product-banner","template-slider-1","template-faq","template-slider-2" ]
 }
