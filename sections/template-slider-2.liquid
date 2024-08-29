@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% for block in section.blocks %}
   {% case block.type %}
     {% when 'Slider' %}
@@ -9,24 +10,42 @@
               {% for num in (1..3) %}
                 {% assign image = 'image_' | append: num %}
                 {% if block.settings[image] != blank %}
+=======
+{% if section.settings.enable_slider_2 %}
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'Slider' %}
+        <section class="mt-12 mb-2">
+          <div class="mx-auto container">
+            <h2 class="text-2xl font-black text-center mb-2">{{ block.settings.heading }}</h2>
+            <div class="swiper swiper1">
+              <div class="swiper-wrapper">
+                {% for num in (1..3) %}
+                  {% assign image = 'image_' | append: num %}
+                  {% if block.settings[image] != blank %}
+>>>>>>> a9e4e193e6c7aa779b6002e13e5925b59402982a
 
-                  <div class="swiper-slide">
-                    <img
-                      class="w-full"
-                      src="{{ block.settings[image] | image_url: width: 1280 }}"
-                      alt="">
-                  </div>
-                {% endif %}
-              {% endfor %}
+                    <div class="swiper-slide">
+                      <img
+                        class="w-full"
+                        src="{{ block.settings[image] | image_url: width: 1280 }}"
+                        alt="">
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
             </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
           </div>
-        </div>
-      </section>
+        </section>
+    {% else %}
+      {% endcase %}
+    {% endfor %}
 
 
+<<<<<<< HEAD
   {% else %}
     {% endcase %}
   {% endfor %}
@@ -45,14 +64,36 @@
     },
 
 
+=======
+    {% comment %} <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> {% endcomment %}
+    <script>
+      const swiper = new Swiper('.swiper1', {
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+>>>>>>> a9e4e193e6c7aa779b6002e13e5925b59402982a
       });
 
-  </script>
+    </script>
+  {% endif %}
 
 
   {% schema %}
     {
       "name": "Slider template 2",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "enable_slider_2",
+          "label": "Enable Slider 2",
+          "default": true
+        }
+      ],
       "blocks": [
         {
           "type": "Slider",

@@ -1,54 +1,56 @@
-<section class="mt-0 mb-2 relative">
-  <div class="mx-auto container">
-    <div class="swiper swiper-tab swiper-tabs swiper-thumbs overflow-hidden" id="swiper-tabs1">
-      <div class="swiper-wrapper bg-transparent-gray-dark ">
-        {% for block in section.blocks %}
-          {% case block.type %}
-            {% when 'slider-tabs' %}
-              {% for num in (1..5) %}
-                {% assign tab_id = 'tab-' | append: num %}
-                <button class="swiper-slide w3-center py-2 text-white">{{ block.settings[tab_id] }}</button>
-              {% endfor %}
-          {% else %}
-
-            {% endcase %}
-
-          {% endfor %}
-
-        </div>
-      </div>
-      <div class="swiper swiper-tab-content overflow-hidden" id="swiper-content1">
-        <div class="swiper-wrapper">
+{% if section.settings.enable_slider_tabs %}
+  <section class="mt-0 mb-2 relative">
+    <div class="mx-auto container">
+      <div class="swiper swiper-tab swiper-tabs swiper-thumbs overflow-hidden" id="swiper-tabs1">
+        <div class="swiper-wrapper bg-transparent-gray-dark ">
           {% for block in section.blocks %}
             {% case block.type %}
               {% when 'slider-tabs' %}
                 {% for num in (1..5) %}
-                  {% assign tab_name = 'tab-' | append: num %}
-                  {% assign tab_content = 'image-' | append: num %}
-                  <div class="w100 swiper-slide">
-                    <img
-                      src="{{ block.settings[tab_content] | image_url: width: 1280 }}"
-                      alt="{{block.settings[tab_name]}}"
-                      title="{{block.settings[tab_name]}}">
-                  </div>
+                  {% assign tab_id = 'tab-' | append: num %}
+                  <button class="swiper-slide w3-center py-2 text-white">{{ block.settings[tab_id] }}</button>
                 {% endfor %}
             {% else %}
-
               {% endcase %}
             {% endfor %}
 
-
           </div>
-          <div class="swiper-button-next swiper-arrow-next"></div>
-          <div class="swiper-button-prev swiper-arrow-prev"></div>
         </div>
-      </div>
-    </section>
+        <div class="swiper swiper-tab-content overflow-hidden" id="swiper-content1">
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'slider-tabs' %}
+                  {% for num in (1..5) %}
+                    {% assign tab_name = 'tab-' | append: num %}
+                    {% assign tab_content = 'image-' | append: num %}
+                    <div class="w100 swiper-slide">
+                      <img
+                        src="{{ block.settings[tab_content] | image_url: width: 1280 }}"
+                        alt="{{block.settings[tab_name]}}"
+                        title="{{block.settings[tab_name]}}">
+                    </div>
+                  {% endfor %}
+              {% else %}
+
+                {% endcase %}
+              {% endfor %}
 
 
-    <script>
+            </div>
+            <div class="swiper-button-next swiper-arrow-next"></div>
+            <div class="swiper-button-prev swiper-arrow-prev"></div>
+          </div>
+        </div>
+      </section>
 
+<<<<<<< HEAD
           const swiperTabs = new Swiper("#swiper-content1", {
+=======
+
+      <script>
+          const swiper1 = new Swiper("#swiper-content1", {
+>>>>>>> a9e4e193e6c7aa779b6002e13e5925b59402982a
               navigation: {
                   nextEl: ".swiper-arrow-next",
                   prevEl: ".swiper-arrow-prev"
@@ -63,13 +65,22 @@
                   slideThumbActiveClass: "thumb-active"
               }
           })
-    </script>
+      </script>
+
+    {% endif %}
 
 
     {% schema %}
       {
         "name": "Slider Tabs",
-        "settings": [],
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "enable_slider_tabs",
+            "label": "Enable Slider Tabs",
+            "default": true
+          }
+        ],
         "blocks": [
           {
             "type": "slider-tabs",
