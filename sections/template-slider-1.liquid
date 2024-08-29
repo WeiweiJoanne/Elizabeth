@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {% for block in section.blocks %}
   {% case block.type %}
     {% when 'Slider' %}
@@ -10,9 +9,6 @@
               {% for num in (1..3) %}
                 {% assign image = 'image_' | append: num %}
                 {% if block.settings[image] != blank %}
-=======
-{% if section.settings.enable_slider_1 %}
->>>>>>> a9e4e193e6c7aa779b6002e13e5925b59402982a
 
   {% for block in section.blocks %}
     {% case block.type %}
@@ -29,7 +25,7 @@
                     <div class="swiper-slide">
                       <img
                         class="w-full"
-                        src="{{ block.settings[image] | image_url: width: 1280 }}"
+                        src="{{ block.settings[image] | image_url: width: 1600 }}"
                         alt="">
                     </div>
                   {% endif %}
@@ -48,19 +44,11 @@
     {% endfor %}
 
 
-<<<<<<< HEAD
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  {% comment %} <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> {% endcomment %}
   <script>
       const swiper1 = new Swiper('#swiper1', {
     loop: true,
     pagination: {
-=======
-    {% comment %} <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> {% endcomment %}
-    <script>
-      const swiper = new Swiper('.swiper1', {
-          loop: true,
-          pagination: {
->>>>>>> a9e4e193e6c7aa779b6002e13e5925b59402982a
       el: '.swiper-pagination',
           },
           navigation: {

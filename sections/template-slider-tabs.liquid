@@ -26,7 +26,7 @@
                     {% assign tab_content = 'image-' | append: num %}
                     <div class="w100 swiper-slide">
                       <img
-                        src="{{ block.settings[tab_content] | image_url: width: 1280 }}"
+                        src="{{ block.settings[tab_content] | image_url: width: 1600 }}"
                         alt="{{block.settings[tab_name]}}"
                         title="{{block.settings[tab_name]}}">
                     </div>
@@ -43,14 +43,8 @@
           </div>
         </div>
       </section>
-
-<<<<<<< HEAD
+<script>
           const swiperTabs = new Swiper("#swiper-content1", {
-=======
-
-      <script>
-          const swiper1 = new Swiper("#swiper-content1", {
->>>>>>> a9e4e193e6c7aa779b6002e13e5925b59402982a
               navigation: {
                   nextEl: ".swiper-arrow-next",
                   prevEl: ".swiper-arrow-prev"
