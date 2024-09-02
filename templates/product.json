@@ -60,14 +60,14 @@
         "template-card": {
             "type": "template-card",
             "blocks": {
-                "cards-title":{
-                    "type":"cards-title"
+                "cards_title":{
+                    "type":"cards_title"
                 },
                 "card":{
                     "type":"card"
                 }
             },
-            "block_order": ["cards-title","card"]
+            "block_order": ["cards_title","card"]
         }
     },
     "order": [ "template-product-banner","template-slider-1","template-faq","template-slider-2","template-slider-tabs","template-policy","template-card" ]
