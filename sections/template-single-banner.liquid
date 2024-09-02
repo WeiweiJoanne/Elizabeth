@@ -1,0 +1,35 @@
+{% if section.settings.enable_single_banner %}
+  
+<section class="mt-12 mb-0">
+  <div class="mx-auto container">
+    <img src="{{ product.metafields.custom[singleImage] |  image_url: width: 1600  }}" alt="">
+  </div>
+</section>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Card template",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_single_banner",
+        "label": "Enable Single Banner",
+        "default": true
+      }
+    ],
+    "blocks": [
+      {
+        "type": "banner_image",
+        "name": "Banner",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "card_image",
+            "label": "Card Image"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
