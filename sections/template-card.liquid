@@ -1,20 +1,34 @@
+{% if section.settings.enable_cards %}
+  
 <section class="mt-12 mb-2">
   <div class="mx-auto container">
-    <h2 class="text-2xl font-black text-center mb-2">{{ product.metafields.custom.cards_title }}</h2>
+    {% for block in section.blocks %}
+      {% if block.type == 'cards_title' %}
+        <h2 class="text-2xl font-black text-center mb-2">{{ block.settings.cards_heading }}</h2>
+      {% endif %}
+      
+    {% endfor %}
+    
     <div class="flex gap-12 justify-center">
-      {% for i in (1..3) %}
+
+    {% for block in section.blocks %}
+      {% if block.type == 'card' %}
         <div class="basic-1/3">
-          {% assign cardImage = "card" | append: i | append: '_image' %}
-          {% assign cardTitle = "card" | append: i | append: '_title' %}
-          {% assign cardDesc = "card" | append: i | append: '_description' %}
-          <img src="{{ product.metafields.custom[cardImage] |  image_url: width: 500  }}" alt="">
-          <h3 class="text-xl font-bold">{{ product.metafields.custom[cardTitle] }}</h3>
-          <p>{{ product.metafields.custom[cardDesc] }}</p>
+        <a href="{{ block.settings.card_link }}">
+          <img src="{{ block.settings.card_image |  image_url: width: 500  }}" alt="">
+          <h3 class="text-xl font-bold">{{ block.settings.card_heading }}</h3>
+          <p>{{ block.settings.card_desc }}</p>
+        </a>
         </div>
-      {% endfor %}
+        
+      {% endif %}
+    
+    {% endfor %}
+
     </div>
   </div>
 </section>
+{% endif %}
 
 {% schema %}
   {
@@ -22,12 +36,24 @@
     "settings": [
       {
         "type": "checkbox",
-        "id": "enable_Cards",
+        "id": "enable_cards",
         "label": "Enable Cards",
         "default": true
       }
     ],
     "blocks": [
+      {
+        "type": "cards_title",
+        "name": "Cards Heading",
+        "settings": [
+          {
+            "type": "inline_richtext",
+            "id": "cards_heading",
+            "label": "Cards Heading"
+          }
+        ],
+        "limit": 1
+      },
       {
         "type": "card",
         "name": "Card",
@@ -44,8 +70,13 @@
             "type": "richtext",
             "id": "card_desc",
             "label": "Card Description"
+          }, {
+            "type": "text",
+            "id": "card_link",
+            "label": "Card Link"
           }
-        ]
+        ],
+        "limit": 3
       }
     ]
   }

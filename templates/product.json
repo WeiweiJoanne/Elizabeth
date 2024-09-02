@@ -56,7 +56,19 @@
                 }
             },
             "block_order": ["policy_heading","list"]
+        },
+        "template-card": {
+            "type": "template-card",
+            "blocks": {
+                "cards-title":{
+                    "type":"cards-title"
+                },
+                "card":{
+                    "type":"card"
+                }
+            },
+            "block_order": ["cards-title","card"]
         }
     },
-    "order": [ "template-product-banner","template-slider-1","template-faq","template-slider-2","template-slider-tabs","template-policy" ]
+    "order": [ "template-product-banner","template-slider-1","template-faq","template-slider-2","template-slider-tabs","template-policy","template-card" ]
 }
