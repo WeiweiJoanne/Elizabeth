@@ -1,73 +1,87 @@
 {
     "sections": {
-        "template-product-banner": {
-            "type": "template-product-banner",
-            "blocks": {
-                
-            },
-            "block_order": ["template-product-banner"]
+        "main": {
+            "type": "main-product",
+            "settings": {}
         },
         "template-slider": {
             "type": "template-slider",
             "blocks": {
                 "slider": {
-                    "type":"Slider"
+                    "type": "Slider"
                 }
-               
             },
-            "block_order": ["slider"]
+            "block_order": [
+                "slider"
+            ]
         },
         "template-faq": {
             "type": "template-faq",
             "blocks": {
-                "FAQ":{
-                    "type":"FAQ_item"
+                "FAQ": {
+                    "type": "FAQ_item"
                 }
             },
-            "block_order": ["FAQ"]
+            "block_order": [
+                "FAQ"
+            ]
         },
         "template-slider-tabs": {
             "type": "template-slider-tabs",
             "blocks": {
-                "Slider-tabs":{
-                    "type":"slider-tabs"
+                "Slider-tabs": {
+                    "type": "slider-tabs"
                 }
             },
-            "block_order": ["Slider-tabs"]
+            "block_order": [
+                "Slider-tabs"
+            ]
         },
         "template-policy": {
             "type": "template-policy",
             "blocks": {
-                "policy_heading":{
-                    "type":"policy_heading"
+                "policy_heading": {
+                    "type": "policy_heading"
                 },
-                "list":{
-                    "type":"list"
+                "list": {
+                    "type": "list"
                 }
             },
-            "block_order": ["policy_heading","list"]
+            "block_order": [
+                "policy_heading",
+                "list"
+            ]
         },
         "template-card": {
             "type": "template-card",
             "blocks": {
-                "cards_title":{
-                    "type":"cards_title"
+                "cards_title": {
+                    "type": "cards_title"
                 },
-                "card":{
-                    "type":"card"
+                "card": {
+                    "type": "card"
                 }
             },
-            "block_order": ["cards_title","card"]
+            "block_order": [
+                "cards_title",
+                "card"
+            ]
         },
         "template-single-banner": {
-            "type": "template-single-banner",
-            "blocks": {
-                "banner_image":{
-                    "type":"banner_image"
-                }
-            },
-            "block_order": ["banner_image"]
+            "type": "template-single-banner"
+        },
+        "template-youtube-video": {
+            "type": "template-youtube-video"
         }
     },
-    "order": [ "template-product-banner","template-slider","template-faq","template-slider-tabs","template-policy","template-card","template-single-banner" ]
+    "order": [
+        "main",
+        "template-slider",
+        "template-faq",
+        "template-slider-tabs",
+        "template-policy",
+        "template-card",
+        "template-single-banner",
+        "template-youtube-video"
+    ]
 }

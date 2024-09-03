@@ -2,12 +2,12 @@
   
 <section class="mt-12 mb-2">
   <div class="mx-auto container">
-    {% for block in section.blocks %}
-      {% if block.type == 'cards_title' %}
-        <h2 class="text-2xl font-black text-center mb-2">{{ block.settings.cards_heading }}</h2>
+   
+      {% if section.settings.cards_heading != blank %}
+        <h2 class="text-2xl font-black text-center mb-2">{{ section.settings.cards_heading }}</h2>
       {% endif %}
       
-    {% endfor %}
+
     
     <div class="flex gap-12 justify-center">
 
@@ -39,30 +39,21 @@
         "id": "enable_cards",
         "label": "Enable Cards",
         "default": true
+      },
+      {
+        "type": "inline_richtext",
+        "id": "cards_heading",
+        "label": "Cards Heading",
+        "default": "Cards Heading"
       }
     ],
     "blocks": [
-      {
-        "type": "cards_title",
-        "name": "Cards Heading",
-        "settings": [
-          {
-            "type": "inline_richtext",
-            "id": "cards_heading",
-            "label": "Cards Heading"
-          }
-        ],
-        "limit": 1
-      },
+      
       {
         "type": "card",
         "name": "Card",
         "settings": [
           {
-            "type": "inline_richtext",
-            "id": "card_heading",
-            "label": "Card Haeding"
-          }, {
             "type": "image_picker",
             "id": "card_image",
             "label": "Card Image"

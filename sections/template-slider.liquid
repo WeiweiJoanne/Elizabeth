@@ -1,4 +1,4 @@
-{% if section.settings.enable_slider_1 %}
+{% if section.settings.enable_slider %}
   {% for block in section.blocks %}
     {% case block.type %}
       {% when 'Slider' %}
@@ -50,8 +50,8 @@
   "settings": [
     {
       "type": "checkbox",
-      "id": "enable_slider_1",
-      "label": "Enable Slider 1",
+      "id": "enable_slider",
+      "label": "Enable Slider",
       "default": true
     }
   ],
