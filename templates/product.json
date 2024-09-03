@@ -7,18 +7,8 @@
             },
             "block_order": ["template-product-banner"]
         },
-        "template-slider-1": {
-            "type": "template-slider-1",
-            "blocks": {
-                "slider": {
-                    "type":"Slider"
-                }
-               
-            },
-            "block_order": ["slider"]
-        },
-        "template-slider-2": {
-            "type": "template-slider-2",
+        "template-slider": {
+            "type": "template-slider",
             "blocks": {
                 "slider": {
                     "type":"Slider"
@@ -68,7 +58,16 @@
                 }
             },
             "block_order": ["cards_title","card"]
+        },
+        "template-single-banner": {
+            "type": "template-single-banner",
+            "blocks": {
+                "banner_image":{
+                    "type":"banner_image"
+                }
+            },
+            "block_order": ["banner_image"]
         }
     },
-    "order": [ "template-product-banner","template-slider-1","template-faq","template-slider-2","template-slider-tabs","template-policy","template-card" ]
+    "order": [ "template-product-banner","template-slider","template-faq","template-slider-tabs","template-policy","template-card","template-single-banner" ]
 }

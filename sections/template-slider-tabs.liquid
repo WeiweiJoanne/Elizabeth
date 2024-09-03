@@ -1,7 +1,7 @@
 {% if section.settings.enable_slider_tabs %}
   <section class="mt-0 mb-2 relative">
     <div class="mx-auto container">
-      <div class="swiper swiper-tab swiper-tabs swiper-thumbs overflow-hidden" id="swiper-tabs1">
+      <div class="swiper swiper-tab swiper-tabs swiper-thumbs overflow-hidden">
         <div class="swiper-wrapper bg-transparent-gray-dark ">
           {% for block in section.blocks %}
             {% case block.type %}
@@ -16,7 +16,7 @@
 
           </div>
         </div>
-        <div class="swiper swiper-tab-content overflow-hidden" id="swiper-content1">
+        <div class="swiper swiper-tab-content overflow-hidden" >
           <div class="swiper-wrapper">
             {% for block in section.blocks %}
               {% case block.type %}
@@ -44,14 +44,14 @@
         </div>
       </section>
 <script>
-          const swiperTabs = new Swiper("#swiper-content1", {
+          const swiperTabs = new Swiper(".swiper-tab-content", {
               navigation: {
                   nextEl: ".swiper-arrow-next",
                   prevEl: ".swiper-arrow-prev"
               },
               thumbs: {
                   swiper: {
-                      el: "#swiper-tabs1",
+                      el: ".swiper-tabs",
                       spaceBetween: 10,
                       slidesPerView: 5,
                       watchSlidesVisibility: !0
@@ -126,6 +126,7 @@
               }
             ]
           }
-        ]
+        ],
+        "limit": 1
       }
     {% endschema %}
