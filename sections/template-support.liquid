@@ -37,7 +37,7 @@
                 </ul>
               </a>
             {% when 'support_item_download' %}
-              <a class="w-3/12 flex flex-col items-center border-2 border-slate-50 rounded-2xl gap-6 pt-12 pb-24  px-8 transition hover:translate-y-[-1rem]" href="https://plustek.com/us/support/faq.php">
+              <a href="{{ block.settings.download_link }}" class="w-3/12 flex flex-col items-center border-2 border-slate-50 rounded-2xl gap-6 pt-12 pb-24  px-8 transition hover:translate-y-[-1rem]">
                 <img
                   class="max-w-28"
                   src="{{ 'download.png' | asset_url }}"
@@ -91,7 +91,8 @@
             }, {
               "type": "text",
               "id": "faq_link",
-              "label": "FAQ Link"
+              "label": "FAQ Link",
+              "default": "https://plustek.com/us/support/faq.php"
             }
           ]
         }, {
@@ -131,7 +132,8 @@
             }, {
               "type": "text",
               "id": "contact_us_link",
-              "label": "Contact us Link"
+              "label": "Contact us Link",
+              "default": "https://plustek.com/us/about-us/contact-us.php"
             }
           ]
         }, {
@@ -164,7 +166,8 @@
             }, {
               "type": "text",
               "id": "download_link",
-              "label": "Download Link"
+              "label": "Download Link",
+              "default": "https://plustek.com/us/support/drivers-and-downloads.php"
             }
           ]
         }
