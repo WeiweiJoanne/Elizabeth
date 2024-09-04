@@ -55,9 +55,6 @@
         "template-card": {
             "type": "template-card",
             "blocks": {
-                "cards_title": {
-                    "type": "cards_title"
-                },
                 "card": {
                     "type": "card"
                 }
@@ -72,6 +69,9 @@
         },
         "template-youtube-video": {
             "type": "template-youtube-video"
+        },
+        "template-support": {
+            "type": "template-support"
         }
     },
     "order": [
@@ -82,6 +82,7 @@
         "template-policy",
         "template-card",
         "template-single-banner",
-        "template-youtube-video"
+        "template-youtube-video",
+        "template-support"
     ]
 }

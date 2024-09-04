@@ -1,0 +1,179 @@
+{% if section.settings.enable_support %}
+
+  <section class="mt-0 mb-12 py-16 px-24 bg-my-orange">
+    <div class="mx-auto container">
+      <h2 class="text-3xl font-white mb-2 text-center">{{ section.settings.support_heading }}</h2>
+      <div class="flex gap-12">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'support_item_faq' %}
+              <a href="{{ block.settings.faq_link }}" class="w-3/12 flex flex-col items-center border-2 border-slate-50 rounded-2xl gap-6 pt-12 pb-24 px-8 transition hover:translate-y-[-1rem] ">
+                <img
+                  class="max-w-28"
+                  src="{{ 'faq.png' | asset_url }}"
+                  alt="Example Image">
+                <h3 class="text-xl text-white">{{ block.settings.faq_heading }}</h3>
+                <h4 class="text-base text-white">{{ block.settings.faq_desc }}</h4>
+              </a>
+            {% when 'support_item_tutorial' %}
+              <a href="{{ block.settings.tutorial_link }}" class="w-3/12 flex flex-col items-center border-2 border-slate-50 rounded-2xl gap-6 pt-12 pb-24 px-8 transition hover:translate-y-[-1rem] ">
+                <img
+                  class="max-w-28"
+                  src="{{ 'tutorial.png' | asset_url }}"
+                  alt="Example Image">
+                <h3 class="text-xl text-white">{{ block.settings.tutorial_heading }}</h3>
+                <h4 class="text-base text-white text-center">{{ block.settings.tutorial_desc }}</h4>
+              </a>
+            {% when 'support_item_contact_us' %}
+              <a href="{{ block.settings.contact_us_link }}" class="w-3/12 flex flex-col items-center border-2 border-slate-50 rounded-2xl gap-6 pt-12 pb-24  px-8 transition hover:translate-y-[-1rem]">
+                <img
+                  class="max-w-28"
+                  src="{{ 'contact-us.png' | asset_url }}"
+                  alt="Example Image">
+                <h3 class="text-xl text-white">{{ block.settings.contact_us_heading }}</h3>
+                <ul>
+                  <li class="text-base text-white text-center">{{ block.settings.contact_us_desc_1 }}</li>
+                  <li class="text-base text-white text-center">{{ block.settings.contact_us_desc_2 }}</li>
+                </ul>
+              </a>
+            {% when 'support_item_download' %}
+              <a class="w-3/12 flex flex-col items-center border-2 border-slate-50 rounded-2xl gap-6 pt-12 pb-24  px-8 transition hover:translate-y-[-1rem]" href="https://plustek.com/us/support/faq.php">
+                <img
+                  class="max-w-28"
+                  src="{{ 'download.png' | asset_url }}"
+                  alt="Example Image">
+                <h3 class="text-xl text-white">{{ block.settings.support_item_download }}</h3>
+                <ul>
+                  <li class="text-base text-white text-center">{{ block.settings.download_list_1 }}</li>
+                  <li class="text-base text-white text-center">{{ block.settings.download_list_2 }}</li>
+                  <li class="text-base text-white text-center">{{ block.settings.download_list_3 }}</li>
+                  <li class="text-base text-white text-center">{{ block.settings.download_list_4 }}</li>
+                </ul>
+              </a>
+          {% else %}
+            {% endcase %}
+          {% endfor %}
+        </div>
+
+      </div>
+    </section>
+  {% endif %}
+
+  {% schema %}
+    {
+      "name": "Support template",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "enable_support",
+          "label": "Enable Support",
+          "default": true
+        }, {
+          "type": "inline_richtext",
+          "id": "support_heading",
+          "label": "Support Heading",
+          "default": "Support Heading"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "support_item_faq",
+          "name": "Support FAQ",
+          "settings": [
+            {
+              "type": "inline_richtext",
+              "id": "faq_heading",
+              "label": "FAQ Heading"
+            }, {
+              "type": "richtext",
+              "id": "faq_desc",
+              "label": "FAQ Description"
+            }, {
+              "type": "text",
+              "id": "faq_link",
+              "label": "FAQ Link"
+            }
+          ]
+        }, {
+          "type": "support_item_tutorial",
+          "name": "Support Tutorial",
+          "settings": [
+            {
+              "type": "inline_richtext",
+              "id": "tutorial_heading",
+              "label": "Tutorial Heading"
+            }, {
+              "type": "richtext",
+              "id": "tutorial_desc",
+              "label": "Tutorial Description"
+            }, {
+              "type": "text",
+              "id": "tutorial_link",
+              "label": "Tutorial Link"
+            }
+          ]
+        }, {
+          "type": "support_item_contact_us",
+          "name": "Support Contact us",
+          "settings": [
+            {
+              "type": "inline_richtext",
+              "id": "contact_us_heading",
+              "label": "Contact us Heading"
+            }, {
+              "type": "richtext",
+              "id": "contact_us_desc_1",
+              "label": "Contact us Description 1"
+            }, {
+              "type": "richtext",
+              "id": "contact_us_desc_2",
+              "label": "Contact us Description 2"
+            }, {
+              "type": "text",
+              "id": "contact_us_link",
+              "label": "Contact us Link"
+            }
+          ]
+        }, {
+          "type": "support_item_download",
+          "name": "Support Download",
+          "settings": [
+            {
+              "type": "inline_richtext",
+              "id": "download_heading",
+              "label": "Download Heading"
+            },
+            {
+              "type": "richtext",
+              "id": "download_list_1",
+              "label": "Download List 1"
+            },
+            {
+              "type": "richtext",
+              "id": "download_list_2",
+              "label": "Download List 2"
+            },
+            {
+              "type": "richtext",
+              "id": "download_list_3",
+              "label": "Download List 3"
+            }, {
+              "type": "richtext",
+              "id": "download_list_4",
+              "label": "Download List 4"
+            }, {
+              "type": "text",
+              "id": "download_link",
+              "label": "Download Link"
+            }
+          ]
+        }
+      ],
+    "presets": [
+      {
+        "name": "Support section",
+        "category": "Support"
+      }
+    ]
+    }
+  {% endschema %}
