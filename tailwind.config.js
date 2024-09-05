@@ -3,8 +3,8 @@ module.exports = {
   content: ["./layout/*.liquid", "./sections/*.liquid", "./snippets/*.liquid", "./templates/customers/*.liquid", "./templates/*.liquid"],
   theme: {
     extend: {
-       translate: {
-        '4.25': '17rem',
+      translate: {
+        4.25: "17rem",
       },
       colors: {
         "transparent-gray": {
@@ -13,7 +13,9 @@ module.exports = {
           dark: "rgba(64, 64, 64, 0.7)",
         },
         "my-orange": {
+          light: "#f2efdd",
           DEFAULT: "#c97040",
+          dark: "#e97132",
         },
       },
       width: {
@@ -21,6 +23,9 @@ module.exports = {
       },
       height: {
         94: "22rem",
+      },
+      borderWidth: {
+        '24':'24px'
       },
     },
   },
