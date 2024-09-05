@@ -1,88 +1,225 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
-    "sections": {
-        "main": {
-            "type": "main-product",
-            "settings": {}
-        },
-        "template-slider": {
-            "type": "template-slider",
-            "blocks": {
-                "slider": {
-                    "type": "Slider"
-                }
-            },
-            "block_order": [
-                "slider"
-            ]
-        },
-        "template-faq": {
-            "type": "template-faq",
-            "blocks": {
-                "FAQ": {
-                    "type": "FAQ_item"
-                }
-            },
-            "block_order": [
-                "FAQ"
-            ]
-        },
-        "template-slider-tabs": {
-            "type": "template-slider-tabs",
-            "blocks": {
-                "Slider-tabs": {
-                    "type": "slider-tabs"
-                }
-            },
-            "block_order": [
-                "Slider-tabs"
-            ]
-        },
-        "template-policy": {
-            "type": "template-policy",
-            "blocks": {
-                "policy_heading": {
-                    "type": "policy_heading"
-                },
-                "list": {
-                    "type": "list"
-                }
-            },
-            "block_order": [
-                "policy_heading",
-                "list"
-            ]
-        },
-        "template-card": {
-            "type": "template-card",
-            "blocks": {
-                "card": {
-                    "type": "card"
-                }
-            },
-            "block_order": [
-                "cards_title",
-                "card"
-            ]
-        },
-        "template-single-banner": {
-            "type": "template-single-banner"
-        },
-        "template-youtube-video": {
-            "type": "template-youtube-video"
-        },
-        "template-support": {
-            "type": "template-support"
-        }
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "show_description": true
+      }
     },
-    "order": [
-        "main",
-        "template-slider",
-        "template-faq",
-        "template-slider-tabs",
-        "template-policy",
-        "template-card",
-        "template-single-banner",
-        "template-youtube-video",
-        "template-support"
-    ]
+    "template-slider": {
+      "type": "template-slider",
+      "blocks": {
+        "slider": {
+          "type": "Slider",
+          "source": "{{ product.metafields.custom.slider.value }}",
+          "settings": {
+            "heading": "{{ product.metafields.custom.slider.value.heading.value }}",
+            "image_1": "{{ product.metafields.custom.slider.value.image_1.value }}",
+            "image_2": "{{ product.metafields.custom.slider.value.image_2.value }}",
+            "image_3": "{{ product.metafields.custom.slider.value.image_3.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "slider"
+      ],
+      "settings": {
+        "enable_slider": true
+      }
+    },
+    "template-faq": {
+      "type": "template-faq",
+      "blocks": {
+        "FAQ": {
+          "type": "FAQ_item",
+          "repeater": "{{ product.metafields.custom.faq_item.value }}",
+          "settings": {
+            "question": "{{ block.repeater.question.value }}",
+            "answer": "<p>{{ block.repeater.answer | metafield_tag }}<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "FAQ"
+      ],
+      "settings": {
+        "enable_FAQs": true
+      }
+    },
+    "template-slider-tabs": {
+      "type": "template-slider-tabs",
+      "blocks": {
+        "Slider-tabs": {
+          "type": "slider-tabs",
+          "source": "{{ product.metafields.custom.slider_tabs.value }}",
+          "settings": {
+            "tab-1": "{{ product.metafields.custom.slider_tabs.value.tab_1.value }}",
+            "tab-2": "{{ product.metafields.custom.slider_tabs.value.tab_2.value }}",
+            "tab-3": "{{ product.metafields.custom.slider_tabs.value.tab_3.value }}",
+            "tab-4": "{{ product.metafields.custom.slider_tabs.value.tab_4.value }}",
+            "tab-5": "{{ product.metafields.custom.slider_tabs.value.tab_5.value }}",
+            "image-1": "{{ product.metafields.custom.slider_tabs.value.image_1.value }}",
+            "image-2": "{{ product.metafields.custom.slider_tabs.value.image_2.value }}",
+            "image-3": "{{ product.metafields.custom.slider_tabs.value.image_3.value }}",
+            "image-4": "{{ product.metafields.custom.slider_tabs.value.image_4.value }}",
+            "image-5": "{{ product.metafields.custom.slider_tabs.value.image_5.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "Slider-tabs"
+      ],
+      "settings": {
+        "enable_slider_tabs": true
+      }
+    },
+    "template-policy": {
+      "type": "template-policy",
+      "blocks": {
+        "policy_heading": {
+          "type": "policy_heading",
+          "settings": {
+            "heading": "Heading123",
+            "para": "<p>bnm,bn,mnb,mn,<\/p>"
+          }
+        },
+        "list": {
+          "type": "list",
+          "settings": {
+            "list_heading": "Heading123",
+            "list_para": "<p>,mn,mn,mn,mn<\/p>"
+          }
+        },
+        "list_68dVpn": {
+          "type": "list",
+          "settings": {
+            "list_heading": "Heading123",
+            "list_para": "<p>mn,mn,mn,mn,mn<\/p>"
+          }
+        },
+        "list_9Tntmq": {
+          "type": "list",
+          "settings": {
+            "list_heading": "Heading123",
+            "list_para": "<p>,mn,mn,nm,nm,nmj;\/;2453dfhfghftj<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "policy_heading",
+        "list",
+        "list_68dVpn",
+        "list_9Tntmq"
+      ],
+      "settings": {
+        "enable_policy": true
+      }
+    },
+    "template-card": {
+      "type": "template-card",
+      "blocks": {
+        "card": {
+          "type": "card",
+          "repeater": "{{ product.metafields.custom.cards.value }}",
+          "settings": {
+            "card_image": "{{ block.repeater.image.value }}",
+            "card_desc": "<p>{{ block.repeater.description | metafield_tag }}<\/p>",
+            "card_link": "{{ block.repeater.heading.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "card"
+      ],
+      "settings": {
+        "enable_cards": true,
+        "cards_heading": "Cards Heading"
+      }
+    },
+    "template-single-banner": {
+      "type": "template-single-banner",
+      "settings": {
+        "banner_title": "Banner Title",
+        "banner_image": "shopify:\/\/shop_images\/6e1f716a-1210-4e5f-8ace-dcf7d58faad8.__CR0_0_1464_600_PT0_SX1464_V1.jpg"
+      }
+    },
+    "template-youtube-video": {
+      "type": "template-youtube-video",
+      "settings": {
+        "video_title": "Youtube",
+        "video_url": "{{ product.metafields.custom.youtube_1.value }}"
+      }
+    },
+    "template-support": {
+      "type": "template-support",
+      "blocks": {
+        "support_item_faq_mjU6hH": {
+          "type": "support_item_faq",
+          "settings": {
+            "faq_heading": "m,jn,",
+            "faq_desc": "<p>,mn<\/p>",
+            "faq_link": ""
+          }
+        },
+        "support_item_tutorial_RUX3KJ": {
+          "type": "support_item_tutorial",
+          "settings": {
+            "tutorial_heading": ",mn,mn,",
+            "tutorial_desc": "<p>,mn,mn,mn,<\/p>",
+            "tutorial_link": ""
+          }
+        },
+        "support_item_contact_us_KHbJfe": {
+          "type": "support_item_contact_us",
+          "settings": {
+            "contact_us_heading": "gfdgdf",
+            "contact_us_desc_1": "<p>gfdgfdg<\/p>",
+            "contact_us_desc_2": "<p>fdsfgsd<\/p>",
+            "contact_us_link": "https:\/\/plustek.com\/us\/about-us\/contact-us.php"
+          }
+        },
+        "support_item_download_nVGPwc": {
+          "type": "support_item_download",
+          "settings": {
+            "download_heading": "fsdg",
+            "download_list_1": "<p>gfdgfd<\/p>",
+            "download_list_2": "<p>gdfgdf<\/p>",
+            "download_list_3": "<p>gfdg<\/p>",
+            "download_list_4": "<p>fdgfd<\/p>",
+            "download_link": "https:\/\/plustek.com\/us\/support\/drivers-and-downloads.php"
+          }
+        }
+      },
+      "block_order": [
+        "support_item_faq_mjU6hH",
+        "support_item_tutorial_RUX3KJ",
+        "support_item_contact_us_KHbJfe",
+        "support_item_download_nVGPwc"
+      ],
+      "settings": {
+        "enable_support": true,
+        "support_heading": "Support Heading"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "template-slider",
+    "template-faq",
+    "template-slider-tabs",
+    "template-policy",
+    "template-card",
+    "template-single-banner",
+    "template-youtube-video",
+    "template-support"
+  ]
 }
