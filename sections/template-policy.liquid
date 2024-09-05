@@ -1,0 +1,91 @@
+{% if section.settings.enable_policy %}
+
+  <section class="mt-0 mb-12  py-4 px-12">
+    <div class="mx-auto container">
+
+      {% for block in section.blocks %}
+        {% case block.type %}
+
+        {% when 'policy_heading' %}
+          
+            <h2 class="text-3xl font-black mb-2">{{ block.settings.heading }}</h2>
+            <p class="text-lg font-black mb-2">{{ block.settings.para }}</p>
+         
+         
+            {% else %}
+
+        {% endcase %}
+      {% endfor %}
+
+      <ul>
+
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'list' %}
+            
+                <li class="mt-6">
+                  <h3 class="text-xl font-black">{{ block.settings.list_heading }}</h3>
+                  <p>{{ block.settings.list_para }}</p>
+                </li>
+
+          {% else %}
+
+            {% endcase %}
+
+          {% endfor %}
+        </ul>
+
+       
+      </div>
+    </section>
+  {% endif %}
+
+
+  {% schema %}
+    {
+      "name": "Policy template",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "enable_policy",
+          "label": "Enable policy",
+          "default": true
+        }
+      ],
+      "blocks": [
+        {
+          "type": "policy_heading",
+          "name": "Policy Heading",
+          "settings": [
+            {
+              "type": "inline_richtext",
+              "id": "heading",
+              "label": "Heading",
+              "default": "Heading123"
+            }, {
+              "type": "richtext",
+              "id": "para",
+              "label": "Paragraph"
+            }
+          ],
+          "limit": 1
+        }, {
+          "type": "list",
+          "name": "List",
+          "settings": [
+            {
+              "type": "inline_richtext",
+              "id": "list_heading",
+              "label": "List Heading",
+              "default": "Heading123"
+            }, {
+              "type": "richtext",
+              "id": "list_para",
+              "label": "List paragraph"
+            }
+          ]
+        }
+
+      ]
+    }
+  {% endschema %}

@@ -1,0 +1,42 @@
+{% if section.settings.video_url != blank %}
+  {% assign video_id = section.settings.video_url | split: 'v=' | last %}
+  <section class="mt-12 mb-12">
+    <div class="mx-auto container">
+      <h2 class="text-2xl font-black text-center mb-2">{{ section.settings.video_title }}</h2>
+      <div class="youtube-video-wrapper">
+        <iframe
+          class="w-full aspect-video"
+          src="https://www.youtube.com/embed/{{ video_id }}"
+          frameborder="0"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+{% else %}
+  <p>No video URL provided. Please enter a YouTube video URL in the section settings.</p>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Youtube Video",
+    "settings": [
+      {
+        "type": "text",
+        "id": "video_title",
+        "label": "YouTube Video Title",
+        "default": "Youtube"
+      }, {
+        "type": "text",
+        "id": "video_url",
+        "label": "YouTube Video URL",
+        "default": "https://www.youtube.com/watch?v=hvdCIMNPUME"
+      }
+    ],
+    "presets": [
+      {
+        "name": "YouTube Video Section",
+        "category": "Media"
+      }
+    ]
+  }
+{% endschema %}

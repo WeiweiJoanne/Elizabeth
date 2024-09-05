@@ -1,0 +1,33 @@
+{% if section.settings.banner_title != blank %}
+  <section class="mt-12 mb-0">
+    <div class="mx-auto container">
+      <h2 class="text-2xl font-black text-center mb-2">{{ section.settings.banner_title }}</h2>
+      <img src="{{ section.settings.banner_image | image_url: width: 1600  }}" width="1600" height="" alt="">
+    </div>
+  </section>
+{% endif %}
+
+
+{% schema %}
+{
+  "name": "Single banner template",
+  "settings": [
+    {
+      "type": "text",
+      "id": "banner_title",
+      "label": "Banner Title",
+      "default": "Banner Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "Banner Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Single banner"
+    }
+  ]
+}
+{% endschema %}

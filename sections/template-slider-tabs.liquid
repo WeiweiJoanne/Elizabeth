@@ -1,0 +1,136 @@
+{% if section.settings.enable_slider_tabs %}
+  <section class="mt-0 mb-2 relative">
+    <div class="mx-auto container">
+      <div class="swiper swiper-tab swiper-tabs swiper-thumbs overflow-hidden">
+        <div class="swiper-wrapper bg-transparent-gray-dark  justify-center">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'slider-tabs' %}
+                {% for num in (1..5) %}
+                  {% assign tab_id = 'tab-' | append: num %}
+                  {% if block.settings[tab_id] != blank %}
+                    <button class="swiper-slide w3-center py-2 text-white">{{ block.settings[tab_id] }}</button>
+                  {% endif %}
+                {% endfor %}
+            {% else %}
+              {% endcase %}
+            {% endfor %}
+
+          </div>
+        </div>
+        <div class="swiper swiper-tab-content overflow-hidden" >
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'slider-tabs' %}
+                  {% for num in (1..5) %}
+                    {% assign tab_name = 'tab-' | append: num %}
+                    {% assign tab_content = 'image-' | append: num %}
+                    {% if block.settings[tab_content] != blank %}
+                    <div class="w100 swiper-slide">
+                      <img
+                        src="{{ block.settings[tab_content] | image_url: width: 1600 }}"
+                        alt="{{block.settings[tab_name]}}"
+                        title="{{block.settings[tab_name]}}">
+                    </div>
+                     {% endif %}
+                  {% endfor %}
+              {% else %}
+
+                {% endcase %}
+              {% endfor %}
+
+
+            </div>
+            <div class="swiper-button-next swiper-arrow-next"></div>
+            <div class="swiper-button-prev swiper-arrow-prev"></div>
+          </div>
+        </div>
+      </section>
+<script>
+          const swiperTabs = new Swiper(".swiper-tab-content", {
+              navigation: {
+                  nextEl: ".swiper-arrow-next",
+                  prevEl: ".swiper-arrow-prev"
+              },
+              thumbs: {
+                  swiper: {
+                      el: ".swiper-tabs",
+                      spaceBetween: 10,
+                      slidesPerView: 5,
+                      watchSlidesVisibility: !0
+                  },
+                  slideThumbActiveClass: "thumb-active"
+              }
+          })
+      </script>
+
+    {% endif %}
+
+
+    {% schema %}
+      {
+        "name": "Slider Tabs",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "enable_slider_tabs",
+            "label": "Enable Slider Tabs",
+            "default": true
+          }
+        ],
+        "blocks": [
+          {
+            "type": "slider-tabs",
+            "name": "Slider Tabs",
+            "settings": [
+              {
+                "type": "text",
+                "id": "tab-1",
+                "label": "Tab 1"
+              },
+              {
+                "type": "text",
+                "id": "tab-2",
+                "label": "Tab 2"
+              },
+              {
+                "type": "text",
+                "id": "tab-3",
+                "label": "Tab 3"
+              },
+              {
+                "type": "text",
+                "id": "tab-4",
+                "label": "Tab 4"
+              }, {
+                "type": "text",
+                "id": "tab-5",
+                "label": "Tab 5"
+              }, {
+                "type": "image_picker",
+                "id": "image-1",
+                "label": "Image 1"
+              }, {
+                "type": "image_picker",
+                "id": "image-2",
+                "label": "Image 2"
+              }, {
+                "type": "image_picker",
+                "id": "image-3",
+                "label": "Image 3"
+              }, {
+                "type": "image_picker",
+                "id": "image-4",
+                "label": "Image 4"
+              }, {
+                "type": "image_picker",
+                "id": "image-5",
+                "label": "Image 5"
+              }
+            ]
+          }
+        ],
+        "limit": 1
+      }
+    {% endschema %}

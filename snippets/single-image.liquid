@@ -1,0 +1,6 @@
+{% assign singleImage = 'single_image_' |  append: single_image %}
+<section class="mt-12 mb-0">
+  <div class="mx-auto container">
+    <img src="{{ product.metafields.custom[singleImage] |  image_url: width: 1600  }}" alt="">
+  </div>
+</section>

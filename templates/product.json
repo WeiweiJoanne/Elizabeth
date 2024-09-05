@@ -1,8 +1,88 @@
 {
     "sections": {
-        "template": {
-            "type": "template-product"
+        "main": {
+            "type": "main-product",
+            "settings": {}
+        },
+        "template-slider": {
+            "type": "template-slider",
+            "blocks": {
+                "slider": {
+                    "type": "Slider"
+                }
+            },
+            "block_order": [
+                "slider"
+            ]
+        },
+        "template-faq": {
+            "type": "template-faq",
+            "blocks": {
+                "FAQ": {
+                    "type": "FAQ_item"
+                }
+            },
+            "block_order": [
+                "FAQ"
+            ]
+        },
+        "template-slider-tabs": {
+            "type": "template-slider-tabs",
+            "blocks": {
+                "Slider-tabs": {
+                    "type": "slider-tabs"
+                }
+            },
+            "block_order": [
+                "Slider-tabs"
+            ]
+        },
+        "template-policy": {
+            "type": "template-policy",
+            "blocks": {
+                "policy_heading": {
+                    "type": "policy_heading"
+                },
+                "list": {
+                    "type": "list"
+                }
+            },
+            "block_order": [
+                "policy_heading",
+                "list"
+            ]
+        },
+        "template-card": {
+            "type": "template-card",
+            "blocks": {
+                "card": {
+                    "type": "card"
+                }
+            },
+            "block_order": [
+                "cards_title",
+                "card"
+            ]
+        },
+        "template-single-banner": {
+            "type": "template-single-banner"
+        },
+        "template-youtube-video": {
+            "type": "template-youtube-video"
+        },
+        "template-support": {
+            "type": "template-support"
         }
     },
-    "order": [ "template" ]
+    "order": [
+        "main",
+        "template-slider",
+        "template-faq",
+        "template-slider-tabs",
+        "template-policy",
+        "template-card",
+        "template-single-banner",
+        "template-youtube-video",
+        "template-support"
+    ]
 }
