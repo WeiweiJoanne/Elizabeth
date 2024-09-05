@@ -2,13 +2,15 @@
   <section class="mt-0 mb-2 relative">
     <div class="mx-auto container">
       <div class="swiper swiper-tab swiper-tabs swiper-thumbs overflow-hidden">
-        <div class="swiper-wrapper bg-transparent-gray-dark ">
+        <div class="swiper-wrapper bg-transparent-gray-dark  justify-center">
           {% for block in section.blocks %}
             {% case block.type %}
               {% when 'slider-tabs' %}
                 {% for num in (1..5) %}
                   {% assign tab_id = 'tab-' | append: num %}
-                  <button class="swiper-slide w3-center py-2 text-white">{{ block.settings[tab_id] }}</button>
+                  {% if block.settings[tab_id] != blank %}
+                    <button class="swiper-slide w3-center py-2 text-white">{{ block.settings[tab_id] }}</button>
+                  {% endif %}
                 {% endfor %}
             {% else %}
               {% endcase %}
@@ -24,12 +26,14 @@
                   {% for num in (1..5) %}
                     {% assign tab_name = 'tab-' | append: num %}
                     {% assign tab_content = 'image-' | append: num %}
+                    {% if block.settings[tab_content] != blank %}
                     <div class="w100 swiper-slide">
                       <img
                         src="{{ block.settings[tab_content] | image_url: width: 1600 }}"
                         alt="{{block.settings[tab_name]}}"
                         title="{{block.settings[tab_name]}}">
                     </div>
+                     {% endif %}
                   {% endfor %}
               {% else %}
 

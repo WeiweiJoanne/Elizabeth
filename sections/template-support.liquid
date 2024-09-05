@@ -1,13 +1,17 @@
 {% if section.settings.enable_support %}
-
   <section class="mt-0 mb-12 py-16 px-24 bg-my-orange">
     <div class="mx-auto container">
-      <h2 class="text-3xl font-white mb-2 text-center">{{ section.settings.support_heading }}</h2>
+      <h2 class="text-3xl font-black text-white mb-12 text-center">{{ section.settings.support_heading }}</h2>
       <div class="flex gap-12">
         {% for block in section.blocks %}
           {% case block.type %}
             {% when 'support_item_faq' %}
-              <a href="{{ block.settings.faq_link }}" class="w-3/12 flex flex-col items-center border-2 border-slate-50 rounded-2xl gap-6 pt-12 pb-24 px-8 transition hover:translate-y-[-1rem] ">
+              {% if block.settings.faq_link != blank %}
+                {% assign faq_link = block.settings.faq_link %}
+              {% else %}
+                {% assign faq_link = "https://plustek.com/us/support/faq.php" %}
+              {% endif %}
+              <a href="{{ faq_link }}" class="w-3/12 flex flex-col items-center border-2 border-slate-50 rounded-2xl gap-6 pt-12 pb-24 px-8 transition hover:translate-y-[-1rem]  ">
                 <img
                   class="max-w-28"
                   src="{{ 'faq.png' | asset_url }}"
@@ -16,6 +20,7 @@
                 <h4 class="text-base text-white">{{ block.settings.faq_desc }}</h4>
               </a>
             {% when 'support_item_tutorial' %}
+
               <a href="{{ block.settings.tutorial_link }}" class="w-3/12 flex flex-col items-center border-2 border-slate-50 rounded-2xl gap-6 pt-12 pb-24 px-8 transition hover:translate-y-[-1rem] ">
                 <img
                   class="max-w-28"
@@ -91,8 +96,7 @@
             }, {
               "type": "text",
               "id": "faq_link",
-              "label": "FAQ Link",
-              "default": "https://plustek.com/us/support/faq.php"
+              "label": "FAQ Link"
             }
           ]
         }, {
@@ -132,8 +136,7 @@
             }, {
               "type": "text",
               "id": "contact_us_link",
-              "label": "Contact us Link",
-              "default": "https://plustek.com/us/about-us/contact-us.php"
+              "label": "Contact us Link"
             }
           ]
         }, {
@@ -166,17 +169,16 @@
             }, {
               "type": "text",
               "id": "download_link",
-              "label": "Download Link",
-              "default": "https://plustek.com/us/support/drivers-and-downloads.php"
+              "label": "Download Link"
             }
           ]
         }
       ],
-    "presets": [
-      {
-        "name": "Support section",
-        "category": "Support"
-      }
-    ]
+      "presets": [
+        {
+          "name": "Support section",
+          "category": "Support"
+        }
+      ]
     }
   {% endschema %}
