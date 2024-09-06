@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .thumb-active {
+        @apply bg-orange-600 text-white border-b-[4px] border-b-white;
+    }
+}
