@@ -4,11 +4,22 @@
             "type": "main-product",
             "settings": {}
         },
-        "template-slider": {
-            "type": "template-slider",
+        "template-slider-1": {
+            "type": "template-slider-1",
             "blocks": {
                 "slider": {
-                    "type": "Slider"
+                    "type": "slider"
+                }
+            },
+            "block_order": [
+                "slider"
+            ]
+        },
+        "template-slider-2": {
+            "type": "template-slider-2",
+            "blocks": {
+                "slider": {
+                    "type": "slider"
                 }
             },
             "block_order": [
@@ -76,7 +87,8 @@
     },
     "order": [
         "main",
-        "template-slider",
+        "template-slider-1",
+        "template-slider-2",
         "template-faq",
         "template-slider-tabs",
         "template-policy",
