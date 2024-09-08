@@ -1,7 +1,7 @@
-{% if section.settings.enable_slider_2 %}
+{% if section.settings.enable_slider %}
   {% for block in section.blocks %}
     {% case block.type %}
-      {% when 'Slider' %}
+      {% when 'slider' %}
         {% if block.settings.heading != blank %}
           <section class="mt-12 mb-2">
             <div class="mx-auto container">
@@ -21,9 +21,9 @@
                     {% endif %}
                   {% endfor %}
                 </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div class="swiper-pagination" id="swiper-pagination2"></div>
+                <div class="swiper-button-prev" id="swiper-button-prev2" ></div>
+                <div class="swiper-button-next" id="swiper-button-next2"></div>
               </div>
             </div>
           </section>
@@ -36,11 +36,11 @@
       const swiper2 = new Swiper('#swiper2', {
           loop: true,
           pagination: {
-      el: '.swiper-pagination',
+      el: '#swiper-pagination2',
           },
           navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '#swiper-button-next2',
+      prevEl: '#swiper-button-prev2',
           },
 
 
@@ -55,14 +55,14 @@
       "settings": [
         {
           "type": "checkbox",
-          "id": "enable_slider_2",
-          "label": "Enable Slider 2",
+          "id": "enable_slider",
+          "label": "Enable Slider",
           "default": true
         }
       ],
       "blocks": [
         {
-          "type": "Slider",
+          "type": "slider",
           "name": "Slider",
           "settings": [
             {
