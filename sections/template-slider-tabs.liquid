@@ -9,7 +9,7 @@
                 {% for num in (1..5) %}
                   {% assign tab_id = 'tab-' | append: num %}
                   {% if block.settings[tab_id] != blank %}
-                    <button class="swiper-slide w3-center py-2 text-white">{{ block.settings[tab_id] }}</button>
+                    <button class="swiper-slide w3-center py-2 text-white text-xl">{{ block.settings[tab_id] }}</button>
                   {% endif %}
                 {% endfor %}
             {% else %}
@@ -40,14 +40,13 @@
                 {% endcase %}
               {% endfor %}
 
-
             </div>
             <div class="swiper-button-next swiper-arrow-next"></div>
             <div class="swiper-button-prev swiper-arrow-prev"></div>
           </div>
         </div>
       </section>
-<script>
+      <script>
           const swiperTabs = new Swiper(".swiper-tab-content", {
               navigation: {
                   nextEl: ".swiper-arrow-next",
@@ -56,7 +55,7 @@
               thumbs: {
                   swiper: {
                       el: ".swiper-tabs",
-                      spaceBetween: 10,
+                      spaceBetween: 0,
                       slidesPerView: 5,
                       watchSlidesVisibility: !0
                   },

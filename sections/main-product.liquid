@@ -11,7 +11,10 @@
         <p class="mt-4 text-sm xl:text-base">
           {{ product.description }}
         </p>
-        <button class="my-2 mt-4 bg-red-500 px-12 py-2 text-white rounded-xl text-xl">Add to Cart</button>
+        {% if section.settings.show_cart_button %}
+          
+          <button class="my-2 mt-4 bg-red-500 px-12 py-2 text-white rounded-xl text-xl">Add to Cart</button>
+        {% endif %}
       </div>
     </div>
   </section>
@@ -21,11 +24,12 @@
   {
     "name": "Main Product",
     "settings": [
+
       {
         "type": "checkbox",
-        "id": "show_description",
-        "label": "顯示產品描述",
-        "default": true
+        "id": "show_cart_button",
+        "label": "購買按鈕",
+        "default": false
       }
     ],
     "presets": [
