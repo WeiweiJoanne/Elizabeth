@@ -1,8 +1,8 @@
 {% if section.settings.enable_support %}
-  <section class="mt-0 mb-12 py-16 px-24 bg-my-orange">
-    <div class="mx-auto container">
+  <section class="mt-0 mb-12 py-16 xl:px-24 bg-my-orange">
+    <div class="mx-auto container  ">
       <h2 class="text-3xl font-black text-white mb-12 text-center">{{ section.settings.support_heading }}</h2>
-      <div class="flex gap-12">
+      <div class="flex gap-4 xl:gap-12">
         {% for block in section.blocks %}
           {% case block.type %}
             {% when 'support_item_faq' %}
@@ -20,7 +20,6 @@
                 <h4 class="text-base text-white">{{ block.settings.faq_desc }}</h4>
               </a>
             {% when 'support_item_tutorial' %}
-
               <a href="{{ block.settings.tutorial_link }}" class="w-3/12 flex flex-col items-center border-2 border-slate-50 rounded-2xl gap-6 pt-12 pb-24 px-8 transition hover:translate-y-[-1rem] ">
                 <img
                   class="max-w-28"

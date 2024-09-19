@@ -1,15 +1,17 @@
 {% if section.settings.enable_slider_tabs %}
   <section class="mt-0 mb-2 relative">
-    <div class="mx-auto container">
+    <div class="mx-auto container ">
       <div class="swiper swiper-tab swiper-tabs swiper-thumbs overflow-hidden">
-        <div class="swiper-wrapper bg-transparent-gray-dark  justify-center">
+        <div class="swiper-wrapper bg-transparent  justify-center mb-2">
           {% for block in section.blocks %}
             {% case block.type %}
               {% when 'slider-tabs' %}
                 {% for num in (1..5) %}
                   {% assign tab_id = 'tab-' | append: num %}
                   {% if block.settings[tab_id] != blank %}
-                    <button class="swiper-slide w3-center py-2 text-white text-xl">{{ block.settings[tab_id] }}</button>
+                    <div class="swiper-slide px-2 bg-white" >
+                      <button class="w-full w3-center py-1 text-xl border-2 border-orange-600 rounded-3xl text-stone-600 font-black">{{ block.settings[tab_id] }}</button>
+                    </div>
                   {% endif %}
                 {% endfor %}
             {% else %}

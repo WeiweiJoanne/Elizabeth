@@ -88,13 +88,13 @@
     "order": [
         "main",
         "template-slider-1",
+        "template-youtube-video",
         "template-slider-2",
-        "template-faq",
-        "template-slider-tabs",
-        "template-policy",
         "template-card",
         "template-single-banner",
-        "template-youtube-video",
+        "template-slider-tabs",
+        "template-faq",
+        "template-policy",
         "template-support"
     ]
 }
