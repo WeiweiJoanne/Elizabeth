@@ -1,10 +1,10 @@
 <div class="flex gap-2 justify-center items-center flex-row">
-    <div class="basis-12/12 thumbnails md:basis-1/12">
+    <div class="basis-1/12 thumbnails md:basis-1/12">
         {% for media in product.media %}
         <div class="h-100 overflow-hidden p-1 shadow-2xl ">
             {% case media.media_type %}
             {% when 'image' %}
-            <img src="{{ media |  image_url: width: 45 }}" data-large="{{ media |  image_url: width: 572 }}"
+            <img src="{{ media |  image_url: width: 45 }}" data-large="{{ media |  image_url: width: 768 }}"
                 alt="{{ media.preview_image.alt}}"
                 class="w-full h-full object-cover thumbnail">
             {% when 'external_video' %}
@@ -18,7 +18,7 @@
         {% endfor %}
     </div>
     <div class="basis-11/12 lg:basis-10/12 ">
-        <img id="main-image" src="{{ product.featured_image | image_url: width: 572 }}" alt="{{ product.title }}" />
+        <img id="main-image" src="{{ product.featured_image | image_url: width: 768 }}" alt="{{ product.title }}" />
     </div>
 </div>
 

@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+    --swiper-theme-color: #f06604;
+}
+.swiper-pagination-bullet{
+    width: 12px;
+    height: 12px;
+}
+
 @layer components {
     .thumb-active button {
         @apply bg-orange-600 text-white ;

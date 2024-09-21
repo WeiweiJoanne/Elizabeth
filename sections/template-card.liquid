@@ -11,10 +11,11 @@
 
         {% for block in section.blocks %}
           {% if block.type == 'card' %}
-            <div class="basic-1/3 md:basis-full">
+            <div class="flex-1 md:basic-full">
               <img src="{{ block.settings.card_image |  image_url: width: 768  }}" alt="">
-              <h3 class="text-xl font-bold">{{ block.settings.card_heading }}</h3>
-              <p>{{ block.settings.card_desc }}</p>
+              <div class="text-center">
+                {{ block.settings.card_desc }}
+              </div>
             </div>
 
           {% endif %}
@@ -51,7 +52,7 @@
             "type": "image_picker",
             "id": "card_image",
             "label": "Card Image"
-          }, {
+          },{
             "type": "richtext",
             "id": "card_desc",
             "label": "Card Description"
