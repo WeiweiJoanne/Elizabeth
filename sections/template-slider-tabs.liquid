@@ -10,7 +10,7 @@
                   {% assign tab_id = 'tab-' | append: num %}
                   {% if block.settings[tab_id] != blank %}
                     <div class="swiper-slide px-2 bg-white" >
-                      <button class="w-full w3-center py-1 text-xl border-2 border-orange-600 rounded-3xl text-stone-600">{{ block.settings[tab_id] }}</button>
+                      <button class="w-full w3-center py-1 text-sm sm:text-base md:text-xl border-2 border-orange-600 rounded-3xl text-stone-600">{{ block.settings[tab_id] }}</button>
                     </div>
                   {% endif %}
                 {% endfor %}

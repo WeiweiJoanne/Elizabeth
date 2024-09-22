@@ -1302,6 +1302,11 @@ video {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
+
+  .sm\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1311,6 +1316,10 @@ video {
 
   .md\:hidden {
     display: none;
+  }
+
+  .md\:w-3\/12 {
+    width: 25%;
   }
 
   .md\:flex-1 {

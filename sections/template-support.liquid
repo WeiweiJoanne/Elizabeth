@@ -2,7 +2,7 @@
   <section class="mt-0 mb-12 py-16 xl:px-24 bg-my-orange">
     <div class="mx-auto container  ">
       <h2 class="text-3xl font-black text-white mb-12 text-center">{{ section.settings.support_heading }}</h2>
-      <div class="flex gap-4 xl:gap-12">
+      <div class="flex gap-4 px-2 flex-col md:flex-row xl:gap-12">
         {% for block in section.blocks %}
           {% case block.type %}
             {% when 'support_item_faq' %}
@@ -11,29 +11,26 @@
               {% else %}
                 {% assign faq_link = "https://plustek.com/us/support/faq.php" %}
               {% endif %}
-              <a href="{{ faq_link }}" class="w-3/12 flex flex-col items-center border-2 border-slate-50 rounded-2xl gap-6 pt-12 pb-24 px-8 transition hover:translate-y-[-1rem]  ">
-                <img
-                  class="max-w-28"
-                  src="{{ 'faq.png' | asset_url }}"
-                  alt="Example Image">
+              <a href="{{ faq_link }}" class="w-full md:w-3/12 flex flex-col items-center border-2 border-slate-50 rounded-2xl gap-6 pt-12 pb-24 px-8 transition hover:translate-y-[-1rem]  ">
+                <img  class="max-w-28"  src="{{ 'faq.png' | asset_url }}" width="" height="" alt="Example Image">
                 <h3 class="text-xl text-white">{{ block.settings.faq_heading }}</h3>
                 <h4 class="text-base text-white">{{ block.settings.faq_desc }}</h4>
               </a>
             {% when 'support_item_tutorial' %}
-              <a href="{{ block.settings.tutorial_link }}" class="w-3/12 flex flex-col items-center border-2 border-slate-50 rounded-2xl gap-6 pt-12 pb-24 px-8 transition hover:translate-y-[-1rem] ">
-                <img
-                  class="max-w-28"
-                  src="{{ 'tutorial.png' | asset_url }}"
-                  alt="Example Image">
+              {% if block.settings.tutorial_link != blank %}
+                {% assign tutorial_link = block.settings.tutorial_link %}
+              {% else %}
+                {% assign tutorial_link = "https://www.youtube.com/@PlustekGlobal" %}
+                
+              {% endif %}
+              <a href="{{ tutorial_link }}" class="w-full md:w-3/12  flex flex-col items-center border-2 border-slate-50 rounded-2xl gap-6 pt-12 pb-24 px-8 transition hover:translate-y-[-1rem] ">
+                <img width="" height=""  class="max-w-28"  src="{{ 'tutorial.png' | asset_url }}" alt="Example Image">
                 <h3 class="text-xl text-white">{{ block.settings.tutorial_heading }}</h3>
                 <h4 class="text-base text-white text-center">{{ block.settings.tutorial_desc }}</h4>
               </a>
             {% when 'support_item_contact_us' %}
-              <a href="{{ block.settings.contact_us_link }}" class="w-3/12 flex flex-col items-center border-2 border-slate-50 rounded-2xl gap-6 pt-12 pb-24  px-8 transition hover:translate-y-[-1rem]">
-                <img
-                  class="max-w-28"
-                  src="{{ 'contact-us.png' | asset_url }}"
-                  alt="Example Image">
+              <a href="https://plustek.com/us/about-us/contact-us.php" class="w-full md:w-3/12  flex flex-col items-center border-2 border-slate-50 rounded-2xl gap-6 pt-12 pb-24  px-8 transition hover:translate-y-[-1rem]">
+                <img width="" height="" class="max-w-28" src="{{ 'contact-us.png' | asset_url }}" alt="Example Image">
                 <h3 class="text-xl text-white">{{ block.settings.contact_us_heading }}</h3>
                 <ul>
                   <li class="text-base text-white text-center">{{ block.settings.contact_us_desc_1 }}</li>
@@ -41,11 +38,8 @@
                 </ul>
               </a>
             {% when 'support_item_download' %}
-              <a href="{{ block.settings.download_link }}" class="w-3/12 flex flex-col items-center border-2 border-slate-50 rounded-2xl gap-6 pt-12 pb-24  px-8 transition hover:translate-y-[-1rem]">
-                <img
-                  class="max-w-28"
-                  src="{{ 'download.png' | asset_url }}"
-                  alt="Example Image">
+              <a href="{{ block.settings.download_link }}" class="w-full md:w-3/12  flex flex-col items-center border-2 border-slate-50 rounded-2xl gap-6 pt-12 pb-24  px-8 transition hover:translate-y-[-1rem]">
+                <img width="" height=""  class="max-w-28" src="{{ 'download.png' | asset_url }}" alt="Example Image">
                 <h3 class="text-xl text-white">{{ block.settings.support_item_download }}</h3>
                 <ul>
                   <li class="text-base text-white text-center">{{ block.settings.download_list_1 }}</li>
@@ -133,10 +127,6 @@
               "type": "richtext",
               "id": "contact_us_desc_2",
               "label": "Contact us Description 2"
-            }, {
-              "type": "text",
-              "id": "contact_us_link",
-              "label": "Contact us Link"
             }
           ]
         }, {
