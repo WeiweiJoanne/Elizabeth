@@ -2,7 +2,7 @@
   {% for block in section.blocks %}
     {% case block.type %}
       {% when 'slider' %}
-        {% if block.settings.heading != blank %}
+       
           <section class="mt-12 mb-2">
             <div class="mx-auto container ">
               <h2 class="text-2xl font-black text-center mb-2">{{ block.settings.heading }}</h2>
@@ -12,8 +12,8 @@
                     {% assign image = 'image_' | append: num %}
                     {% if block.settings[image] != blank %}
                       <div class="swiper-slide">
-                        <img  class="w-full" src="{{ block.settings[image] | image_url: width: 1280 }}"
-                          alt="" width="1280" height="" >
+                        <img class="w-full" src="{{ block.settings[image] | image_url: width: 1600 }}"
+                          alt="" width="1600" height="" >
                       </div>
                     {% endif %}
                   {% endfor %}
@@ -24,7 +24,7 @@
               </div>
             </div>
           </section>
-        {% endif %}
+   
       {% else %}
     {% endcase %}
   {% endfor %}
