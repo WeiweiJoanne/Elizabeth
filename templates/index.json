@@ -1,8 +1,7 @@
 {
     "sections": {
-
-        "template-slider-1": {
-            "type": "template-slider-1"
+        "template-homepage":{
+            "type": "homepage"
         },
         "template-products":{
             "type":"template-products"
@@ -10,7 +9,7 @@
 
     },
     "order": [
-        "template-slider-1",
+        "template-homepage",
         "template-products"
     ]
 }

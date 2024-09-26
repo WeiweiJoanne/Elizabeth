@@ -9,6 +9,12 @@
     width: 12px;
     height: 12px;
 }
+.my-bg-transparent{
+    background-color: transparent
+}
+.text-slate-950{
+    color: rgb(2 6 23);
+}
 
 @layer components {
     .thumb-active button {
