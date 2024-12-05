@@ -1,0 +1,65 @@
+{% if section.settings.enable_category %}
+  <section class="mt-12 max-w-full mx-auto w-full">
+    <div class="mx-auto container">
+      {% if section.settings.heading != blank %}
+        <h2 class="text-3xl font-black text-center mb-2">{{ section.settings.heading }}</h2>
+      {% endif %}
+
+      <div class="flex justify-center flex-col md:flex-row">
+
+        {% for block in section.blocks %}
+          {% if block.type == 'category' %}
+            <a class="flex-1 overflow-hidden md:basic-full" href="{{ block.settings.link }}">
+              <img class="w-full transition duration-300  hover:scale-105" src="{{ block.settings.image |  image_url: width: 768  }}" alt="{{ block.settings.ALT }}">
+            </a>
+          {% endif %}
+
+        {% endfor %}
+
+      </div>
+    </div>
+
+  </section>
+{% endif %}
+
+
+{% schema %}
+  {
+    "name": "Category template",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_category",
+        "label": "Enable Category",
+        "default": true
+      }, {
+        "type": "inline_richtext",
+        "id": "heading",
+        "label": "Category Heading",
+        "default": "Category Heading"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "category",
+        "name": "Category",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Category Image"
+          }, {
+            "type": "text",
+            "id": "alt",
+            "label": "Alt"
+          }, {
+            "type": "text",
+            "id": "link",
+            "label": "Category Link"
+          }
+        ],
+        "limit": 3
+      }
+    ]
+  }
+{% endschema %}

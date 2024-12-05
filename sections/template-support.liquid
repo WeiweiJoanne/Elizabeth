@@ -1,8 +1,8 @@
 {% if section.settings.enable_support %}
-  <section class="mt-0 mb-12 py-16 xl:px-24 bg-my-orange">
+  <section class="mt-0 mb-12 py-16 xl:px-24 bg-orange-500">
     <div class="mx-auto container  ">
       <h2 class="text-3xl font-black text-white mb-12 text-center">{{ section.settings.support_heading }}</h2>
-      <div class="flex gap-4 px-2 flex-col md:flex-row xl:gap-12">
+      <div class="flex gap-4 px-2 flex-col md:flex-row md:gap-2 xl:gap-12">
         {% for block in section.blocks %}
           {% case block.type %}
             {% when 'support_item_faq' %}

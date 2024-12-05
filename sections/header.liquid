@@ -1,16 +1,19 @@
-<div class="nav fixed border-t-[16px] border-t-orange-500 top-0 left-0 z-10 w-full duration-500 bg-white my-bg-transparent"  x-data="{ mobileMenuOpen: true}">
+<div class="nav fixed border-t-[16px] border-t-orange-500 top-0 left-0 z-10 w-full bg-white"  x-data="{ mobileMenuOpen: true}">
   <div class="mx-auto max-w-screen-2xl px-4 sm:px-6">
-    <div class="flex justify-between items-center py-6 md:justify-start md:space-x-10">
+    <div class="flex justify-between items-center md:py-4 md:justify-start md:space-x-10">
 
       <div class="flex justify-start  truncate">
-        <h1 class="text-xl font-bold truncate">
-          <img
-            class="max-w-28"
-            src="{{ 'plustek-logo.webp' | asset_url }}"
-            alt="Example Image">
-        </h1>
+        <a href="/">
+
+          <h1 class="text-xl font-bold truncate">
+            <img
+              class="max-w-28"
+              src="{{ 'plustek-logo.webp' | asset_url }}"
+              alt="Example Image">
+          </h1>
+        </a>
       </div>
-      <div class="-mr-2 -my-2 ml-3 md:hidden">
+      <div class="mr-2 my-2 ml-3 md:hidden">
         <button
           type="button"
           class="bg-white p-2 inline-flex items-center justify-center focus:outline-none"
@@ -22,7 +25,7 @@
       <!-- MOBILE MENU CONTAINER -->
       <div x-show=" mobileMenuOpen " class="absolute z-10 top-0 inset-x-0 p-2 transform origin-top-left md:hidden">
         <div class="shadow-lg rounded-lg ring-1 ring-black ring-opacity-5 bg-white w-full">
-          <div class="p-5 divide-y-2 divide-gray-50">
+          <div class="px-4 py-2 divide-y-2 divide-gray-50">
 
             <!-- MOBILE MENU HEADER TITLE PLUS CLOSE BUTTON -->
             <div class="flex items-center justify-between pb-3">
@@ -129,7 +132,7 @@
           {% else %}
 
             <div class="relative">
-              <a href="{{ link.url }}" class="text-lg nav-button text-white font-black hover:text-gray-900">{{ link.title }}</a>
+              <a href="{{ link.url }}" class="text-lg nav-button font-black text-gray-900">{{ link.title }}</a>
             </div>
           {% endif %}
 

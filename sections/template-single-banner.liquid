@@ -1,33 +1,44 @@
-{% if section.settings.banner_title != blank %}
-  <section class="mt-12 mb-12">
-    <div class="mx-auto container ">
-      <h2 class="text-2xl font-black text-center mb-2">{{ section.settings.banner_title }}</h2>
-      <img src="{{ section.settings.banner_image | image_url: width: 1600  }}" width="1600" height="" alt="">
+{% if section.settings.image != blank %}
+  <section class="mt-12 mb-12 ">
+    <div class="mx-auto container overflow-hidden ">
+      <h2 class="text-2xl font-black text-center mb-2">{{ section.settings.title }}</h2>
+      <a href="{{ section.settings.link }}" class="">
+
+        <img class="transition duration-300  hover:scale-105"
+          src="{{ section.settings.image | image_url: width: 1600  }}"
+          width="1600"
+          height=""
+          alt="">
+      </a>
     </div>
   </section>
 {% endif %}
 
 
 {% schema %}
-{
-  "name": "Single banner template",
-  "settings": [
-    {
-      "type": "text",
-      "id": "banner_title",
-      "label": "Banner Title",
-      "default": "Banner Title"
-    },
-    {
-      "type": "image_picker",
-      "id": "banner_image",
-      "label": "Banner Image"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Single banner"
-    }
-  ]
-}
+  {
+    "name": "Single banner template",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Title"
+      }, {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }, {
+        "type": "text",
+        "id": "link",
+        "label": "Link",
+        "default": "javascrip:;"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Single banner"
+      }
+    ]
+  }
 {% endschema %}
