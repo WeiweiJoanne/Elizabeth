@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -148,15 +148,13 @@
     },
     "template-single-banner": {
       "type": "template-single-banner",
-      "settings": {
-        "banner_title": "Banner Title"
-      }
+      "settings": {}
     },
     "template-youtube-video": {
       "type": "template-youtube-video",
       "settings": {
         "video_title": "Youtube",
-        "video_url": "https:\/\/www.youtube.com\/watch?v=hvdCIMNPUME"
+        "video_url": "https://www.youtube.com/watch?v=hvdCIMNPUME"
       }
     },
     "template-support": {
@@ -166,8 +164,8 @@
           "type": "support_item_faq",
           "settings": {
             "faq_heading": "hfgh",
-            "faq_desc": "<p>hgfhgfh<\/p>",
-            "faq_link": "https:\/\/plustek.com\/us\/support\/faq.php"
+            "faq_desc": "<p>hgfhgfh</p>",
+            "faq_link": "https://plustek.com/us/support/faq.php"
           }
         }
       },
@@ -193,4 +191,3 @@
     "template-support"
   ]
 }
-
