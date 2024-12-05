@@ -1,0 +1,41 @@
+{% if section.settings.banner %}
+
+  <section class="mb-2 max-w-full mx-auto w-full">
+    
+    <a href="{{ section.settings.url }}" class="overflow-hidden" >
+      <img
+        class="w-full"
+        src="{{ section.settings.banner |  image_url: width: 1600  }}"
+        alt="{{ section.settings.ALT }}" title="{{ section.settings.ALT }}">
+    </a>
+
+  </section>
+{% endif %}
+
+
+{% schema %}
+  {
+    "name": "Banner template",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "banner",
+        "label": "Banner"
+      }, {
+        "type": "text",
+        "id": "ALT",
+        "label": "ALT"
+      }, {
+        "type": "text",
+        "id": "url",
+        "label": "Link"
+      }
+    ],
+      "presets": [
+        {
+          "name": "Banner section",
+          "category": "Banner"
+        }
+      ]
+  }
+{% endschema %}

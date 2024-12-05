@@ -2,8 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+    --swiper-theme-color: #f06604;
+}
+.swiper-pagination-bullet{
+    width: 12px;
+    height: 12px;
+}
+.my-bg-transparent{
+    background-color: transparent
+}
+.text-slate-950{
+    color: rgb(2 6 23);
+}
+
 @layer components {
-    .thumb-active {
-        @apply bg-orange-600 text-white border-b-[4px] border-b-white;
+    .thumb-active button {
+        @apply bg-orange-600 text-white ;
     }
 }

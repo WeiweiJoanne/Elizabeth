@@ -1,0 +1,22 @@
+{
+    "sections": {
+        "template-banner":{
+            "type": "template-banner"
+        },
+        "template-product-card":{
+            "type":"template-product-card"
+        },
+        "template-support":{
+            "type":"template-support"
+        },
+        "template-category":{
+            "type":"template-category"
+        }
+    },
+    "order": [
+        "template-banner",
+        "template-product-card",
+        "template-category",
+        "template-support"
+    ]
+}
