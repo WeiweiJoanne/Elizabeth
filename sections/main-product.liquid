@@ -1,58 +1,69 @@
-
-  <section class="pt-24">
-    <div class="mx-auto container flex my-8 items-center flex-col gap-4 lg:flex-row lg:gap-0">
-      <div class="px-2 product--media lg:basis-5/12 xl:basis-6/12 2xl:basis-5/12">
-        {% render 'product-media' %}
-      </div>
-      <div class="px-2 product--infomation lg:basis-7/12 xl:basis-6/12 2xl:basis-7/12">
-      {% form 'product', product %}
-        <h1 class="text-lg font-black md:text-2xl xl:text-3xl">
+<section class="pt-24">
+  <div class="mx-auto container flex my-8 items-stretch flex-col gap-4 lg:flex-row lg:gap-0">
+    <div class="px-2 product--media lg:basis-5/12 xl:basis-6/12 2xl:basis-5/12">
+      {% render 'product-media' %}
+    </div>
+    <div class="px-2 product--infomation lg:basis-7/12 xl:basis-6/12 2xl:basis-7/12">
+      {% form 'product'
+        , product, class: 'h-full flex flex-col' %}
+        <h1 class="text-lg font-black mb-2 md:text-2xl lg:text-xl xl:text-3xl">
           {{ product.title }}
         </h1>
-        
-        <p class="mt-4 text-sm xl:text-base">
-          {{ product.description }}
-        </p>
-        
-        <p class="mt-4 text-sm xl:text-base">
-           {% assign product_price = product.selected_or_first_available_variant  %}  
-           <span class="text-base text-gray-500 line-through">{{ product_price.compare_at_price | money }}</span> 
-          
-           <span class="text-lg text-grey-900">{{ product_price.price | money }}</span>
 
-           {% if product_price.price <  product_price.compare_at_price %}
-            <span class="px-5 py-1 text-sm font-bold bg-red-500 rounded-full text-white mx-4">
-              Sale
-            </span>
-            
-           {% endif %}
-        </p>
 
-        <input type="hidden" name="quantity" value="1" />
-        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" />
+        {{ product.description }}
 
-        <button type="submit" name="checkout" class="my-2 mt-4 bg-red-500 px-12 py-2 text-white rounded-xl text-xl">立即購買</button>
-               
-          
+
+        <div class="mt-auto">
+
+          <div class="text-sm xl:text-base flex items-end justify-end">
+            {% assign product_price = product.selected_or_first_available_variant %}
+            <span class="text-base text-gray-500 line-through leading-none">{{ product_price.compare_at_price | money }}</span>
+  
+            <span class="text-5xl  text-grey-900 font-bold italic text-red-600 leading-none">{{ product_price.price | money }}</span>
+            {% if product_price.price < product_price.compare_at_price %}
+              <span class="px-5 py-1 text-sm font-bold bg-red-500 rounded-full text-white mx-4">
+                Sale
+              </span>
+  
+            {% endif %}
+          </div>
+  
+          <input
+            type="hidden"
+            name="quantity"
+            value="1" />
+          <input
+            type="hidden"
+            name="id"
+            value="{{ product.selected_or_first_available_variant.id }}" />
+  
+          <button
+            type="submit"
+            name="checkout"
+            class="mt-4 bg-orange-600 px-12 py-2 text-white rounded-3xl text-2xl w-full">Buy Now</button>
+        </div>
+
+
       {% endform %}
-        {% comment %} {% if section.settings.show_cart_button %}
-
-          <form method="post" action="/cart/add">
-            <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
-            <input type="hidden" name="quantity" value="1" />
-            <button type="submit" class="my-2 mt-4 bg-red-500 px-12 py-2 text-white rounded-xl text-xl">
-              立即購買 {{ product.variants.first.id }}
-            </button>
-          </form>
-          
-          <button class="my-2 mt-4 bg-red-500 px-12 py-2 text-white rounded-xl text-xl">Add to Cart</button>
-        {% endif %} {% endcomment %}
-      </div>
+    {% comment %} {% if section.settings.show_cart_button %}
+  
+                <form method="post" action="/cart/add">
+                  <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                  <input type="hidden" name="quantity" value="1" />
+                  <button type="submit" class="my-2 mt-4 bg-red-500 px-12 py-2 text-white rounded-xl text-xl">
+                    立即購買 {{ product.variants.first.id }}
+                  </button>
+                </form>
+            
+                <button class="my-2 mt-4 bg-red-500 px-12 py-2 text-white rounded-xl text-xl">Add to Cart</button>
+            {% endif %} {% endcomment %}
     </div>
-  </section>
+  </div>
+</section>
 
 
-  {% schema %}
+{% schema %}
   {
     "name": "Main Product",
     "settings": [
@@ -71,5 +82,4 @@
       }
     ]
   }
-  {% endschema %}
-
+{% endschema %}
