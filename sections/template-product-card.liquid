@@ -7,9 +7,9 @@
     {% for product in my_collection.products %}
     <div class="product-cards w-full lg:w-1/2 ">
       {% form 'product', product, class: 'h-full' %}
-<div class="mx-4">
+<div class="mx-4 h-full">
       <div
-        class="flex flex-col md:flex-row lg:flex-col xl:flex-row gap-4 h-full product-card justify-center xl:justify-between p-6 items-center border-2 border-solid border-slate-200 rounded-xl">
+        class="flex flex-col md:flex-row lg:flex-col xl:flex-row gap-4 h-full product-card justify-between xl:justify-center xl:justify-between p-6 items-center xl:items-stretch border-2 border-solid border-slate-200 rounded-xl">
         <div class="w-full xl:w-2/5 max-w-[360px] -px-4 ">
           <a href="{{product.url}}" class="">
             <img class="w-full" src="{{ product.featured_image | image_url: width: 360 }}"
@@ -21,9 +21,9 @@
             {{ product.title }}
           </h2>
 
-          <div class="mt-4 text-sm xl:text-base">
+          <div class="mt-12 xl:mt-auto text-sm xl:text-base">
             {% assign product_price = product.selected_or_first_available_variant %}
-            <div class="flex items-end ">
+            <div class="flex items-end justify-end">
 
 
               <span class="text-base text-gray-500 line-through leading-none mr-2">{{ product_price.compare_at_price |
@@ -44,7 +44,7 @@
             <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" />
 
             <button type="submit" name="checkout"
-              class="w-full mt-2 bg-red-600 px-12 py-2 text-white rounded-xl text-xl font-black">Buy Now</button>
+              class="w-full mt-2 bg-orange-600 px-12 py-2 text-white rounded-xl text-xl font-black">Buy Now</button>
           </div>
 
         </div>

@@ -12,106 +12,45 @@
     "main": {
       "type": "main-product",
       "settings": {
-        "show_cart_button": false
+        "show_cart_button": true
       }
     },
     "template-slider-1": {
       "type": "template-slider-1",
-      "blocks": {
-        "slider": {
-          "type": "slider",
-          "source": "{{ product.metafields.custom.slider.value }}",
-          "settings": {
-            "heading": "{{ product.metafields.custom.slider.value.heading.value }}",
-            "image_1": "{{ product.metafields.custom.slider.value.image_1.value }}",
-            "image_2": "{{ product.metafields.custom.slider.value.image_2.value }}",
-            "image_3": "{{ product.metafields.custom.slider.value.image_3.value }}"
-          }
-        }
-      },
-      "block_order": [
-        "slider"
-      ],
       "settings": {
         "enable_slider": true
       }
     },
     "template-slider-2": {
       "type": "template-slider-2",
-      "blocks": {
-        "slider": {
-          "type": "slider",
-          "source": "{{ product.metafields.custom.slider_2.value }}",
-          "settings": {
-            "heading": "{{ product.metafields.custom.slider_2.value.heading.value }}",
-            "image_1": "{{ product.metafields.custom.slider_2.value.image_1.value }}",
-            "image_2": "{{ product.metafields.custom.slider_2.value.image_2.value }}",
-            "image_3": "{{ product.metafields.custom.slider_2.value.image_3.value }}"
-          }
-        }
-      },
-      "block_order": [
-        "slider"
-      ],
       "settings": {
         "enable_slider": true
       }
     },
-    "template-faq": {
-      "type": "template-faq",
-      "blocks": {
-        "faq_item_CLhWEg": {
-          "type": "FAQ_item",
-          "repeater": "{{ product.metafields.custom.faq_item.value }}",
-          "settings": {
-            "question": "{{ block.repeater.question.value }}",
-            "answer": "<p>{{ block.repeater.answer | metafield_tag }}</p>"
-          }
-        }
-      },
-      "block_order": [
-        "faq_item_CLhWEg"
-      ],
+    "template-card": {
+      "type": "template-card",
       "settings": {
-        "enable_FAQs": true
+        "enable_cards": true,
+        "cards_heading": "Cards Heading"
+      }
+    },
+    "template-single-banner": {
+      "type": "template-single-banner",
+      "settings": {
+        "title": "Title",
+        "link": "javascrip:;"
       }
     },
     "template-slider-tabs": {
       "type": "template-slider-tabs",
-      "blocks": {
-        "slider_tabs_pR3dJL": {
-          "type": "slider-tabs",
-          "settings": {
-            "tab-1": "",
-            "tab-2": "",
-            "tab-3": "",
-            "tab-4": "",
-            "tab-5": ""
-          }
-        },
-        "Slider-tabs": {
-          "type": "slider-tabs",
-          "source": "{{ product.metafields.custom.slider_tabs.value }}",
-          "settings": {
-            "tab-1": "{{ product.metafields.custom.slider_tabs.value.tab_1.value }}",
-            "tab-2": "{{ product.metafields.custom.slider_tabs.value.tab_2.value }}",
-            "tab-3": "{{ product.metafields.custom.slider_tabs.value.tab_3.value }}",
-            "tab-4": "{{ product.metafields.custom.slider_tabs.value.tab_4.value }}",
-            "tab-5": "{{ product.metafields.custom.slider_tabs.value.tab_5.value }}",
-            "image-1": "{{ product.metafields.custom.slider_tabs.value.image_1.value }}",
-            "image-2": "{{ product.metafields.custom.slider_tabs.value.image_2.value }}",
-            "image-3": "{{ product.metafields.custom.slider_tabs.value.image_3.value }}",
-            "image-4": "{{ product.metafields.custom.slider_tabs.value.image_4.value }}",
-            "image-5": "{{ product.metafields.custom.slider_tabs.value.image_5.value }}"
-          }
-        }
-      },
-      "block_order": [
-        "slider_tabs_pR3dJL",
-        "Slider-tabs"
-      ],
       "settings": {
         "enable_slider_tabs": true
+      }
+    },
+    "template-faq": {
+      "type": "template-faq",
+      "settings": {
+        "enable_FAQs": true
       }
     },
     "template-policy": {
@@ -140,103 +79,11 @@
         "enable_policy": true
       }
     },
-    "template-card": {
-      "type": "template-card",
-      "blocks": {
-        "card_iUELfX": {
-          "type": "card",
-          "settings": {
-            "card_image": "shopify://shop_images/41nWnT_-RLL._AC.jpg",
-            "card_desc": "<p><strong>hgfhfghgfhg</strong></p>"
-          }
-        },
-        "card": {
-          "type": "card",
-          "settings": {
-            "card_desc": ""
-          }
-        },
-        "card_PjYhCf": {
-          "type": "card",
-          "settings": {
-            "card_image": "shopify://shop_images/31tlv320YyL._AC.jpg",
-            "card_desc": "<p>hgfhgjghjhgj</p>"
-          }
-        }
-      },
-      "block_order": [
-        "card_iUELfX",
-        "card",
-        "card_PjYhCf"
-      ],
-      "settings": {
-        "enable_cards": true,
-        "cards_heading": "Cards Heading"
-      }
-    },
-    "template-single-banner": {
-      "type": "template-single-banner",
-      "settings": {
-        "title": "",
-        "image": "shopify://shop_images/6e1f716a-1210-4e5f-8ace-dcf7d58faad8.__CR0_0_1464_600_PT0_SX1464_V1.jpg",
-        "link": "javascrip:;"
-      }
-    },
-    "template-youtube-video": {
-      "type": "template-youtube-video",
-      "settings": {
-        "video_title": "Youtube",
-        "video_url": "https://www.youtube.com/watch?v=hvdCIMNPUME"
-      }
-    },
     "template-support": {
       "type": "template-support",
-      "blocks": {
-        "support_item_faq_hGJ8Ma": {
-          "type": "support_item_faq",
-          "settings": {
-            "faq_heading": "hfgh",
-            "faq_desc": "<p>hgfhgfh</p>",
-            "faq_link": "https://plustek.com/us/support/faq.php"
-          }
-        },
-        "support_item_tutorial_fyKmHq": {
-          "type": "support_item_tutorial",
-          "settings": {
-            "tutorial_heading": "",
-            "tutorial_desc": "",
-            "tutorial_link": ""
-          }
-        },
-        "support_item_contact_us_cLGhE3": {
-          "type": "support_item_contact_us",
-          "settings": {
-            "contact_us_heading": "",
-            "contact_us_desc_1": "",
-            "contact_us_desc_2": ""
-          }
-        },
-        "support_item_download_y9EPXi": {
-          "type": "support_item_download",
-          "settings": {
-            "download_heading": "nvbnvbnbv",
-            "download_list_1": "",
-            "download_list_2": "",
-            "download_list_3": "",
-            "download_list_4": "",
-            "download_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "support_item_faq_hGJ8Ma",
-        "support_item_tutorial_fyKmHq",
-        "support_item_contact_us_cLGhE3",
-        "support_item_download_y9EPXi"
-      ],
       "settings": {
         "enable_support": true,
-        "support_heading": "Support Heading"
+        "support_heading": "Support"
       }
     }
   },
@@ -244,12 +91,11 @@
     "main",
     "template-slider-1",
     "template-slider-2",
-    "template-faq",
-    "template-slider-tabs",
-    "template-policy",
     "template-card",
     "template-single-banner",
-    "template-youtube-video",
+    "template-slider-tabs",
+    "template-faq",
+    "template-policy",
     "template-support"
   ]
 }
