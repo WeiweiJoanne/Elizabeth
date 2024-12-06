@@ -81,7 +81,7 @@
         ".mt-12,.mb-12,.mb-2 {margin: 0;}"
       ],
       "settings": {
-        "title": "Title",
+        "title": "",
         "image": "shopify://shop_images/plustek-estore-customerfeedback.jpg",
         "link": "javascrip:;"
       }
@@ -130,6 +130,9 @@
         "support_item_tutorial_XmiDFm",
         "support_item_contact_us_FgV4N9",
         "support_item_download_bfBMDK"
+      ],
+      "custom_css": [
+        "section.mb-12 {margin-bottom: 0;}"
       ],
       "settings": {
         "enable_support": true,
