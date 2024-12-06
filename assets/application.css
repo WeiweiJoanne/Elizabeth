@@ -1595,6 +1595,10 @@ video {
     margin-left: 0px;
   }
 
+  .lg\:mt-auto {
+    margin-top: auto;
+  }
+
   .lg\:w-1\/2 {
     width: 50%;
   }
@@ -1628,6 +1632,10 @@ video {
     flex-direction: column;
   }
 
+  .lg\:justify-center {
+    justify-content: center;
+  }
+
   .lg\:gap-0 {
     gap: 0px;
   }
@@ -1643,6 +1651,10 @@ video {
 }
 
 @media (min-width: 1280px) {
+  .xl\:mt-auto {
+    margin-top: auto;
+  }
+
   .xl\:w-1\/3 {
     width: 33.333333%;
   }
@@ -1661,6 +1673,14 @@ video {
 
   .xl\:flex-row {
     flex-direction: row;
+  }
+
+  .xl\:items-stretch {
+    align-items: stretch;
+  }
+
+  .xl\:justify-center {
+    justify-content: center;
   }
 
   .xl\:justify-between {
