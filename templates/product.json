@@ -38,6 +38,7 @@
       "type": "template-single-banner",
       "settings": {
         "title": "Title",
+        "image": "shopify://shop_images/plustek-estore-no-code-rpa-autofill.jpg",
         "link": "javascrip:;"
       }
     },
