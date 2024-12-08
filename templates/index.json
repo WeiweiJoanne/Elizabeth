@@ -70,13 +70,12 @@
       "settings": {
         "title": "",
         "image": "shopify://shop_images/plustek-estore-no-code-rpa-autofill.jpg",
-        "link": "javascrip:;"
+        "link": ""
       }
     },
     "template_single_banner_YLKCkU": {
       "type": "template-single-banner",
       "custom_css": [
-        "a {cursor: default;}",
         "img {transform: none;}",
         ".mt-12,.mb-12,.mb-2 {margin: 0;}"
       ],
