@@ -902,10 +902,6 @@ video {
   flex-direction: column-reverse;
 }
 
-.items-start {
-  align-items: flex-start;
-}
-
 .items-end {
   align-items: flex-end;
 }

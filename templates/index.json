@@ -70,7 +70,7 @@
         "settings": {
           "title": "",
           "image": "shopify://shop_images/plustek-estore-no-code-rpa-autofill.jpg",
-          "link": "javascrip:;"
+          "link": ""
         }
       },
       "template_single_banner_YLKCkU": {
@@ -83,7 +83,7 @@
         "settings": {
           "title": "",
           "image": "shopify://shop_images/plustek-estore-customerfeedback.jpg",
-          "link": "javascrip:;"
+          "link": ""
         }
       },
       "template-support": {
