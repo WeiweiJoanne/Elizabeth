@@ -7,6 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
+<<<<<<< HEAD
 {
   "sections": {
     "template-banner": {
@@ -148,3 +149,148 @@
     "template-support"
   ]
 }
+=======
+ {
+    "sections": {
+      "template-banner": {
+        "type": "template-banner",
+        "custom_css": [
+          "section {margin-top: 80px;}"
+        ],
+        "settings": {
+          "banner": "shopify://shop_images/plustek-estore-make-paper-document-searchable.jpg",
+          "ALT": "",
+          "url": ""
+        }
+      },
+      "template-product-card": {
+        "type": "template-product-card",
+        "settings": {}
+      },
+      "template-category": {
+        "type": "template-category",
+        "blocks": {
+          "category_tX74Nf": {
+            "type": "category",
+            "settings": {
+              "image": "shopify://shop_images/plustek-estore-document-scanners.jpg",
+              "alt": "",
+              "link": ""
+            }
+          },
+          "category_xYkHUA": {
+            "type": "category",
+            "settings": {
+              "image": "shopify://shop_images/plustek-estore-photo-film-scanners.jpg",
+              "alt": "",
+              "link": ""
+            }
+          },
+          "category_i8mWaD": {
+            "type": "category",
+            "settings": {
+              "image": "shopify://shop_images/plustek-estore-flatbed-scanners.jpg",
+              "alt": "",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "category_tX74Nf",
+          "category_xYkHUA",
+          "category_i8mWaD"
+        ],
+        "settings": {
+          "enable_category": true,
+          "heading": "Category Heading"
+        }
+      },
+      "template_single_banner_bXfLXV": {
+        "type": "template-single-banner",
+        "custom_css": [
+          ".mt-12,.mb-12,.mb-2 {margin: 0;}"
+        ],
+        "settings": {
+          "title": "",
+          "image": "shopify://shop_images/plustek-estore-no-code-rpa-autofill.jpg",
+          "link": "javascrip:;"
+        }
+      },
+      "template_single_banner_YLKCkU": {
+        "type": "template-single-banner",
+        "custom_css": [
+          "a {cursor: default;}",
+          "img {transform: none;}",
+          ".mt-12,.mb-12,.mb-2 {margin: 0;}"
+        ],
+        "settings": {
+          "title": "",
+          "image": "shopify://shop_images/plustek-estore-customerfeedback.jpg",
+          "link": "javascrip:;"
+        }
+      },
+      "template-support": {
+        "type": "template-support",
+        "blocks": {
+          "support_item_faq_KCAbnQ": {
+            "type": "support_item_faq",
+            "settings": {
+              "faq_heading": "",
+              "faq_desc": "",
+              "faq_link": "https://plustek.com/us/support/faq.php"
+            }
+          },
+          "support_item_tutorial_XmiDFm": {
+            "type": "support_item_tutorial",
+            "settings": {
+              "tutorial_heading": "",
+              "tutorial_desc": "",
+              "tutorial_link": ""
+            }
+          },
+          "support_item_contact_us_FgV4N9": {
+            "type": "support_item_contact_us",
+            "settings": {
+              "contact_us_heading": "",
+              "contact_us_desc_1": "",
+              "contact_us_desc_2": ""
+            }
+          },
+          "support_item_download_bfBMDK": {
+            "type": "support_item_download",
+            "settings": {
+              "download_heading": "",
+              "download_list_1": "",
+              "download_list_2": "",
+              "download_list_3": "",
+              "download_list_4": "",
+              "download_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "support_item_faq_KCAbnQ",
+          "support_item_tutorial_XmiDFm",
+          "support_item_contact_us_FgV4N9",
+          "support_item_download_bfBMDK"
+        ],
+        "custom_css": [
+          "section.mb-12 {margin-bottom: 0;}"
+        ],
+        "settings": {
+          "enable_support": true,
+          "support_heading": "Support Heading"
+        }
+      }
+    },
+    "order": [
+      "template-banner",
+      "template-product-card",
+      "template-category",
+      "template_single_banner_bXfLXV",
+      "template_single_banner_YLKCkU",
+      "template-support"
+    ]
+  }
+  
+>>>>>>> newProduct

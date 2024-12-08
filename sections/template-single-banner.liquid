@@ -1,8 +1,8 @@
 {% if section.settings.image != blank %}
-  <section class="mt-12 mb-12 ">
-    <div class="mx-auto container overflow-hidden ">
+  <section class="mt-12 mb-12 single-banner">
+    <div class="mx-auto container">
       <h2 class="text-2xl font-black text-center mb-2">{{ section.settings.title }}</h2>
-      <a href="{{ section.settings.link }}" class="">
+      <a href="{{ section.settings.link }}" class="overflow-hidden block">
 
         <img class="transition duration-300  hover:scale-105"
           src="{{ section.settings.image | image_url: width: 1600  }}"
@@ -13,6 +13,8 @@
     </div>
   </section>
 {% endif %}
+
+
 
 
 {% schema %}
@@ -29,10 +31,9 @@
         "id": "image",
         "label": "Image"
       }, {
-        "type": "text",
+        "type": "url",
         "id": "link",
-        "label": "Link",
-        "default": "javascrip:;"
+        "label": "Link"
       }
     ],
     "presets": [

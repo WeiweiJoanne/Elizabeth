@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{
+ {
   "sections": {
     "main": {
       "type": "main-product",
@@ -17,18 +17,59 @@
     },
     "template-slider-1": {
       "type": "template-slider-1",
+      "blocks": {
+        "slider_pH4GRT": {
+          "type": "slider",
+          "settings": {
+            "heading": "{{ product.metafields.custom.slider_1.value.heading.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "slider_pH4GRT"
+      ],
       "settings": {
         "enable_slider": true
       }
     },
+    "template-youtube-video": {
+      "type": "template-youtube-video",
+      "custom_css": [],
+      "settings": {
+        "video_title": "Youtube",
+        "video_url": ""
+      }
+    },
     "template-slider-2": {
       "type": "template-slider-2",
+      "blocks": {
+        "slider": {
+          "type": "slider",
+          "settings": {
+            "heading": ""
+          }
+        }
+      },
+      "block_order": [
+        "slider"
+      ],
       "settings": {
         "enable_slider": true
       }
     },
     "template-card": {
       "type": "template-card",
+      "blocks": {
+        "card": {
+          "type": "card",
+          "settings": {
+            "card_desc": ""
+          }
+        }
+      },
+      "block_order": [
+        "card"
+      ],
       "settings": {
         "enable_cards": true,
         "cards_heading": "Cards Heading"
@@ -37,19 +78,68 @@
     "template-single-banner": {
       "type": "template-single-banner",
       "settings": {
+<<<<<<< HEAD
         "title": "",
         "image": "shopify://shop_images/plustek-estore-no-code-rpa-autofill.jpg",
         "link": "javascrip:;"
+=======
+        "banner_title": "Banner Title"
+>>>>>>> newProduct
       }
     },
     "template-slider-tabs": {
       "type": "template-slider-tabs",
+      "blocks": {
+        "slider_tabs_XmHqL9": {
+          "type": "slider-tabs",
+          "source": "{{ product.metafields.custom.slider_tabs.value }}",
+          "settings": {
+            "tab-1": "{{ product.metafields.custom.slider_tabs.value.tab_1.value }}",
+            "tab-2": "{{ product.metafields.custom.slider_tabs.value.tab_2.value }}",
+            "tab-3": "{{ product.metafields.custom.slider_tabs.value.tab_3.value }}",
+            "tab-4": "{{ product.metafields.custom.slider_tabs.value.tab_4.value }}",
+            "tab-5": "{{ product.metafields.custom.slider_tabs.value.tab_5.value }}",
+            "image-1": "{{ product.metafields.custom.slider_tabs.value.image_1.value }}",
+            "image-2": "{{ product.metafields.custom.slider_tabs.value.image_2.value }}",
+            "image-3": "{{ product.metafields.custom.slider_tabs.value.image_3.value }}",
+            "image-4": "{{ product.metafields.custom.slider_tabs.value.image_4.value }}",
+            "image-5": "{{ product.metafields.custom.slider_tabs.value.image_5.value }}"
+          }
+        },
+        "Slider-tabs": {
+          "type": "slider-tabs",
+          "settings": {
+            "tab-1": "",
+            "tab-2": "",
+            "tab-3": "",
+            "tab-4": "",
+            "tab-5": ""
+          }
+        }
+      },
+      "block_order": [
+        "slider_tabs_XmHqL9",
+        "Slider-tabs"
+      ],
       "settings": {
         "enable_slider_tabs": true
       }
     },
     "template-faq": {
       "type": "template-faq",
+      "blocks": {
+        "FAQ": {
+          "type": "FAQ_item",
+          "repeater": "{{ product.metafields.custom.faq_item.value }}",
+          "settings": {
+            "question": "{{ block.repeater.question.value }}",
+            "answer": "{{ block.repeater.answer | metafield_tag }}"
+          }
+        }
+      },
+      "block_order": [
+        "FAQ"
+      ],
       "settings": {
         "enable_FAQs": true
       }
@@ -82,6 +172,49 @@
     },
     "template-support": {
       "type": "template-support",
+      "blocks": {
+        "support_item_faq_8EYPRi": {
+          "type": "support_item_faq",
+          "settings": {
+            "faq_heading": "FAQ",
+            "faq_desc": "<p>Knowledge Base</p>",
+            "faq_link": "https://plustek.com/us/support/faq.php"
+          }
+        },
+        "support_item_tutorial_U78B9p": {
+          "type": "support_item_tutorial",
+          "settings": {
+            "tutorial_heading": "Tutorials",
+            "tutorial_desc": "<p>Watch Easy-to-Follow Videos on YouTube</p>",
+            "tutorial_link": "https://www.youtube.com/@PlustekGlobal"
+          }
+        },
+        "support_item_contact_us_GritPq": {
+          "type": "support_item_contact_us",
+          "settings": {
+            "contact_us_heading": "Contact Us",
+            "contact_us_desc_1": "<p>714-670-7713</p><p>infoUSA@PlustekUS.com</p>",
+            "contact_us_desc_2": ""
+          }
+        },
+        "support_item_download_4ikJGQ": {
+          "type": "support_item_download",
+          "settings": {
+            "download_heading": "Download",
+            "download_list_1": "<p>User Manual</p>",
+            "download_list_2": "<p>Quick Start Guide</p>",
+            "download_list_3": "<p>Drivers</p>",
+            "download_list_4": "",
+            "download_link": "https://plustek.com/us/support/drivers-and-downloads.php"
+          }
+        }
+      },
+      "block_order": [
+        "support_item_faq_8EYPRi",
+        "support_item_tutorial_U78B9p",
+        "support_item_contact_us_GritPq",
+        "support_item_download_4ikJGQ"
+      ],
       "settings": {
         "enable_support": true,
         "support_heading": "Support"
@@ -91,6 +224,7 @@
   "order": [
     "main",
     "template-slider-1",
+    "template-youtube-video",
     "template-slider-2",
     "template-card",
     "template-single-banner",
