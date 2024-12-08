@@ -1,5 +1,5 @@
 {% if cart.item_count > 0 %}
-<div class="p-4 pt-24">
+<div class="p-4 pt-24" data-qty="{{cart.item_count}}">
     {% comment %} <div class="max-w-6xl flex- flex-col my-10 mx-auto">
         <div class="flex-1">
             <div class="flex items-end justify-between my-5">
@@ -24,13 +24,11 @@
                         <td class="py-4 px-6 flex flex-col justify-center">
                             <a href="{{ item.url }}" class="flex items-center gap-4">
                                 {% if item.image %}
-                                <img src="{{ item | img_url: 'small' }}" alt="{{ item.title | escape }}"
-                                    class="w-20 h-20 object-cover border">
+                                <img src="{{ item | img_url: 'small' }}" alt="{{ item.title | escape }}" class="w-20 h-20 object-cover border">
                                 {% else %}
                                 {{ 'product-1' | placeholder_svg_tag: 'w-20 h-20 object-cover border' }}
                                 {% endif %}
-                                <h2 href="{{ item.url }}" class="my-1 text-lg ">{{ item.product.title | truncatewords:
-                                    12}}</h2>
+                                <h2 href="{{ item.url }}" class="my-1 text-lg ">{{ item.product.title | truncatewords: 12}}</h2>
                             </a>
                         </td>
                         {% comment %} <td class="py-4 px-6 flex flex-col justify-center">
@@ -72,7 +70,12 @@
     </div>
 </div>
 {% else %}
-<h1>Your cart is empty</h1>
+<div class="p-4 pt-24" data-qty="{{cart.item_count}}">
+    <div class="max-w-6xl flex flex-col my-10 mx-auto">
+        <h1 class="font-black text-xl py-4 px-6 ">Your cart is empty</h1>
+        
+    </div>
+</div>
 {% endif %}
 
 <script>
